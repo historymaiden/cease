@@ -1,0 +1,27 @@
+<!--project template: cease/templates/base.html -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="en">
+<head>
+    <title>{% block title %}cease{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}css/stylesheet.css"/>
+    <link type="text/javascript" rel="stylesheet" href="{{ STATIC_URL }}js/javascript.js"/>
+    <!--<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet"/>-->
+   
+</head>
+
+<body>
+    <h1>cease game</h1>
+    <p>This is the cease main template.</p>
+    
+    <div class="content">
+            {% block content %}
+            {% endblock %}
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script> <!--see settings.py-->
+</body>
+
+</html>
