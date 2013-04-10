@@ -4,9 +4,10 @@ from django.db import models
 
 class Illness (models.Model):
     iName = models.CharField(max_length=50, unique=True)
-    age_range = models.CharField(max_length=5)
+    prominence = models.CharField(max_length=500)
     life_expectancy = models.CharField(max_length=100, blank=True)
     background_info = models.CharField(max_length=500, blank=True)
+    image = models.CharField(max_length=500)
     
     class Meta(object):
         ordering = ('iName', 'pk')
