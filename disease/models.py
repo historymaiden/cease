@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Illness (models.Model):
+class Disease (models.Model):
     iName = models.CharField(max_length=50, unique=True)
     prominence = models.CharField(max_length=500)
     life_expectancy = models.CharField(max_length=100, blank=True)
@@ -17,7 +17,7 @@ class Illness (models.Model):
 
 class Treatments (models.Model):
     tName = models.CharField(max_length=50)
-    illness = models.ManyToManyField("Illness")
+    disease = models.ManyToManyField("Disease")
     symptoms = models.CharField(max_length=300)
     quality_of_life = models.CharField(max_length=500, blank=True)
     tCost = models.FloatField(null=False, max_length=10)
