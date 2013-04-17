@@ -29,5 +29,5 @@ class Treatments (models.Model):
         return self.tName
     
     def save(self, *args, **kwargs):
-        self.tName = self.tName.upper()
+        self.tName = self.tName()
         super(Treatments, self).save(*args, **kwargs)
