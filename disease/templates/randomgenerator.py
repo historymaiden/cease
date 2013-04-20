@@ -2,6 +2,11 @@
 
 import random
 
+random_id = random.random(0, Disease.objects.count() - 1)
+random_obj = Disease.objects.all()[random_id]
+
+
+
 for i in range(5):
 
     # random float: 0.0 <= number < 1.0

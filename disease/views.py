@@ -2,64 +2,72 @@
 from roster.models import Teams, Player
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
+import random
 
 def disease(request):
-    iName = get_object_or_404(Disease, id=pk)
-    prominence = get_object_or_404(Disease, id=pk)
-    life_expectancy = get_object_or_404(Disease, id=pk)
-    background_info = get_object_or_404(Disease, id=pk)
+    disease = get_object_or_404(Disease, id=pk)
+    intro = get_object_or_404(Disease, id=pk)
+    background = get_object_or_404(Disease, id=pk)
     image = get_object_or_404(Disease, id=pk)
-    tempDisease = Disease.objects.all()
-    randomDisease = Disease.objects.order_by('?')[0]
+    tempDisease = Disease.objects.all() #is this necessary?
+    randomDisease = Disease.objects.order_by('?')[0] #shuffles the list and picks the first in the list
+    # randomDisease = tempDisease.order_by('?')[0]  will this way work for random as well?
+    #or will the following 2 lines work better?
+    # random_id = random.random(0, Disease.objects.count() - 1)
+    # random_obj = Disease.objects.all()[random_id]
+    
     context = {
-        'disease': iName,
-        'prominence': prominence,
-        'expectancy': life_expectancy,
-        'background': background_info,
+        'disease': disease,
+        'intro': intro,
+        'background': background,
         'image': image,
-        'random': randomDisease,
+        'random': randomDisease, #if using the second method, this line would be 'random': random_obj,
     }
     return render(request, "disease/template1.html", context)
 
 def treatment(request):
-    tName = get_object_or_404(Treatments, id=pk)
-    disease = get_object_or_404(Treatments, id=pk)
-    symptoms = get_object_or_404(Treatments, id=pk)
-    quality_of_life = get_object_or_404(Treatments, id=pk)
-    tCost = get_object_or_404(Treatments, id=pk)
+    scenario = get_object_or_404(Treatments, id=pk)
+    treatment = get_object_or_404(Treatments, id=pk)
+    disease = get_object_or_404(Disease, id=pk)
+    lifeExtension = get_object_or_404(Treatments, id=pk)
+    choice = get_object_or_404(Treatments, id=pk)
+    cost = get_object_or_404(Treatments, id=pk)
+    doctorVisits = get_object_or_404(Treatments, id=pk)
+    
     context = {
-        'treatment': tName,
+        'scenario': scenario,
+        'treatment': treatment,
         'disease': disease,
-        'cost': tCost,
-        'negatives': symptoms,
-        'postives': quality_of_life,
+        'lifeExtension': lifeExtension,
+        'choice': choice,
+        'cost': cost,
+        'docVisits': doctorVisits,
     }
     
     return render(request, "disease/template2.html", context)
 
 def home(request):
-    iName = get_object_or_404(Disease, id=pk)
-    prominence = get_object_or_404(Disease, id=pk)
-    life_expectancy = get_object_or_404(Disease, id=pk)
-    background_info = get_object_or_404(Disease, id=pk)
+    disease = get_object_or_404(Disease, id=pk)
+    intro = get_object_or_404(Disease, id=pk)
+    background = get_object_or_404(Disease, id=pk)
     image = get_object_or_404(Disease, id=pk)
     
-    tName = get_object_or_404(Treatments, id=pk)
-    disease = get_object_or_404(Treatments, id=pk)
-    symptoms = get_object_or_404(Treatments, id=pk)
-    quality_of_life = get_object_or_404(Treatments, id=pk)
-    tCost = get_object_or_404(Treatments, id=pk)
+    treatment = get_object_or_404(Treatments, id=pk)
+    disease = get_object_or_404(Disease, id=pk)
+    lifeExtension = get_object_or_404(Treatments, id=pk)
+    choice = get_object_or_404(Treatments, id=pk)
+    cost = get_object_or_404(Treatments, id=pk)
+    doctorVisits = get_object_or_404(Treatments, id=pk)
     
     context = {
-        'disease': iName,
-        'prominence': prominence,
-        'expectancy': life_expectancy,
-        'background': background_info,
+        'disease': disease,
+        'intro': intro,
+        'background': background,
         'image': image,
-        'treatment': tName,
-        'cost': tCost,
-        'negatives': symptoms,
-        'postives': quality_of_life,
+        'treatment': treatment,
+        'lifeExtension': lifeExtension,
+        'cost': cost,
+        'doctorVisits': doctorVisits,
     }  
     
-    return render(request, "disease/cookieMonster.html", context)
+    return render(request, "disease/home.html", context)

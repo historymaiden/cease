@@ -9,27 +9,34 @@ class Disease (models.Model):
     image = models.CharField(max_length=500)
     
     class Meta(object):
-        ordering = ('iName', 'pk')
+        ordering = ('disease', 'pk')
     
     def __unicode__(self):
-        return self.iName
+        return self.disease
 
 class Treatments (models.Model):
     scenario = models.CharField(max_length=50)
-    life_expectancy = models.ManyToManyField("Disease")
+    disease = models.ManyToManyField("Disease")
     treatment = models.CharField(max_length=300)
-    life_extension = models.CharField(max_length=500, blank=True)
+    life_extension = models.CharField(max_length=5000, blank=True)
     choice = models.CharField(max_length=500, blank=True)
     cost = models.FloatField(null=False, max_length=10)
-    doctor_visits = models.FloatField(null=False, max_length=10)
+    doctor_visits = models.IntegerField(null=False, max_length=3)
 
     
     class Meta(object):
-        ordering = ('tName', 'pk')
+        ordering = ('treatment', 'pk')
     
     def __unicode__(self):
-        return self.tName
+        return self.treatment
     
     def save(self, *args, **kwargs):
-        self.tName = self.tName()
+        self.treatment
         super(Treatments, self).save(*args, **kwargs)
+
+#this is another option for random but not entirely sure how it works or how to reference it in views.py
+class diseaseManager(models.Manager):
+    def random(self):
+        count = self.aggregate(count=Count('id'))['count']
+        random_index = randint(0, count - 1)
+        return self.all()[random_index]
