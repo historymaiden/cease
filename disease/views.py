@@ -10,12 +10,14 @@ def disease(request):
     background_info = get_object_or_404(Disease, id=pk)
     image = get_object_or_404(Disease, id=pk)
     tempDisease = Disease.objects.all()
+    randomDisease = Disease.objects.order_by('?')[0]
     context = {
         'disease': iName,
         'prominence': prominence,
         'expectancy': life_expectancy,
         'background': background_info,
         'image': image,
+        'random': randomDisease,
     }
     return render(request, "disease/template1.html", context)
 
@@ -36,11 +38,11 @@ def treatment(request):
     return render(request, "disease/template2.html", context)
 
 def home(request):
-    iName = get_object_or_404(Illness, id=pk)
-    prominence = get_object_or_404(Illness, id=pk)
-    life_expectancy = get_object_or_404(Illness, id=pk)
-    background_info = get_object_or_404(Illness, id=pk)
-    image = get_object_or_404(Illness, id=pk)
+    iName = get_object_or_404(Disease, id=pk)
+    prominence = get_object_or_404(Disease, id=pk)
+    life_expectancy = get_object_or_404(Disease, id=pk)
+    background_info = get_object_or_404(Disease, id=pk)
+    image = get_object_or_404(Disease, id=pk)
     
     tName = get_object_or_404(Treatments, id=pk)
     disease = get_object_or_404(Treatments, id=pk)
@@ -60,4 +62,4 @@ def home(request):
         'postives': quality_of_life,
     }  
     
-    return render(request, "disease/home.html", context)
+    return render(request, "disease/cookieMonster.html", context)

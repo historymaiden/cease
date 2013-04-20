@@ -1,10 +1,10 @@
 from django.contrib import admin
-from illness.models import Illness, Treatments
+from disease.models import Disease, Treatments
 
-class IllnessAdmin(admin.ModelAdmin):
+class DiseaseAdmin(admin.ModelAdmin):
     search_fields = ('iName',)
     
-admin.site.register(Illness, IllnessAdmin)
+admin.site.register(Disease, DiseaseAdmin)
 
 class TreatmentsAdmin(admin.ModelAdmin):
     search_fields = ('tName',)

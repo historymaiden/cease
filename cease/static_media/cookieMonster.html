@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Cookies</title>
+    <!--<link rel="stylesheet" href="styles.css" type="text/css">  -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+    <script type="text/javascript" src="../js/jquery.validate.js"></script>
+    
+    
+    <script>
+    var name = null;
+    var cookie;
+    var age = 0;
+    var value;
+    $(document).ready(function(){
+        $("#submit").click(function() {
+            $("#userInfo").validate({ 
+                rules: { 
+                    name: "required",
+                    age: "required",  
+                },
+                submitHandler: function(form) {
+   // some other code
+   // maybe disabling submit button
+   // then:
+             setCookie(name, age)
+ } 
+          
+            });
+            
+        });
+        
+        
+        
+        
+        function setCookie(name,age){   
+                //collect the cookie for Name and Age fields
+                $.cookie("eol_challengeName", name , { expires: 1,  path: '/' });
+                $.cookie("eol_challengeAge", age , { expires: 1,  path: '/' });
+                //insert age calc here
+                alert($.cookie("eol_challengeName" + "eol_challengeAge"));
+                //print the data in the console
+                console.log($.cookie('eol_challengeName'));
+                
+                //take the age entered and turn it into a number so the disease age can be calculated
+                //cookie = parseInt($.cookie('eol_challengeAge'))//use in another script for the second page for on document ready get this cookie
+    
+                //I've stopped getting errors with the current code but I don't know where 'value' comes into play
+               //don't think I need this line: value = (eval(name + age));               
+               //don't think I need this line: $.cookie('eol_challengeName', value , { expires: 1,  path: '/' });
+                
+            }; 
+    });
+    
+    </script>
+</head>
+
+<body>
+
+<form name="input" action="" id="userInfo" method="post">
+    Name:<input type="text" name="name"><br>
+    Age:<input type="text" name="age"><br>
+    
+    <input type="submit" id="submit" value="Take the challenge">
+</form>
+
+<div>
+    <p></p>    
+</div>
+
+
+</body>
+</html>
