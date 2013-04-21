@@ -34,9 +34,3 @@ class Treatments (models.Model):
         self.treatment
         super(Treatments, self).save(*args, **kwargs)
 
-#this is another option for random but not entirely sure how it works or how to reference it in views.py
-class diseaseManager(models.Manager):
-    def random(self):
-        count = self.aggregate(count=Count('id'))['count']
-        random_index = randint(0, count - 1)
-        return self.all()[random_index]

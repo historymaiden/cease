@@ -10,18 +10,15 @@ def disease(request):
     background = get_object_or_404(Disease, id=pk)
     image = get_object_or_404(Disease, id=pk)
     tempDisease = Disease.objects.all() #is this necessary?
-    randomDisease = Disease.objects.order_by('?')[0] #shuffles the list and picks the first in the list
-    # randomDisease = tempDisease.order_by('?')[0]  will this way work for random as well?
-    #or will the following 2 lines work better?
-    # random_id = random.random(0, Disease.objects.count() - 1)
-    # random_obj = Disease.objects.all()[random_id]
+    random_id = random.random(0, Disease.objects.count() - 1)
+    random_obj = Disease.objects.all()[random_id]
     
     context = {
         'disease': disease,
         'intro': intro,
         'background': background,
         'image': image,
-        'random': randomDisease, #if using the second method, this line would be 'random': random_obj,
+        'random': random_obj, #I think the template would say for i in random?
     }
     return render(request, "disease/template1.html", context)
 
