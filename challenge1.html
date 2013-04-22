@@ -1,0 +1,92 @@
+{% extends "base.html"%}
+{% load humanize %}
+{% load url from future %} 
+   
+{% block content %}
+
+
+<body class="challengeModal-iframe-body">
+		<div id="challengeModal1">
+        	<div class="row">
+                <div class="challengeModal-text">
+                    <h2>cease.</h2>
+                    <img class="challengeModal-line-vertical" class="hide-for-small" src="img/charcoal-line-vertical.png"/>
+                    <p>For most Americans, death exists as a distant reality. But even with the advances of modern medicine, 
+                    seven out of every 10 Americans still die from chronic disease.<br/><br/>
+                    In many of these cases, patients must make difficult decisions about end-of-life treatment 
+                    options as their long battles with illness draw to a close. <strong>Do you know what choices you would make?</strong></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="challengeModal-call">
+                    <a href="#" id="challengeModal-begin-link"><img src="img/button-big-blue-light.png" alt="button"/>
+                    <p><strong>Take the challenge</strong></p></a>
+                    <p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Or, skip to the main site.</a></p>
+                </div>
+            </div>
+            <div class="row">
+            	<img class="challengeModal-border" src="img/heartbeat-border-bottom.png" alt="border"/>
+            </div>
+        </div>
+        <!--end challengeModal1-->
+        <div id="challengeModal2" style="display:none;">
+        	<div class="row">
+                    <div class="challengeModal-logo">
+                    	<h2>cease.</h2>
+                        <img src="img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="challengeModal-text">
+                    <p>Please enter your name and age in the boxes below:</p>
+                    <form>
+                      <div class="row">
+                        <div class="small-10">
+                          <div class="row">
+                            <div class="small-3 columns">
+                              <label for="right-label" class="right inline">Name:</label>
+                            </div>
+                            <div class="small-9 columns challengeModal-input">
+                              <input type="text" name="name" id="right-label" placeholder="Your name">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="small-3 columns">
+                              <label for="right-label" class="right inline">Age:</label>
+                            </div>
+                            <div class="small-5 columns challengeModal-input">
+                              <input type="text" name="age" id="right-label" placeholder="Your age">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <p>To begin the decision-making process, you will be randomly assigned one of four major terminal illnesses 
+                    in the United States. Click the next button to continue.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="challengeModal-next">
+                    <a href="challenge2.html" target="challenge1" id="submit"><img src="img/button-small-blue-dark.png" alt="button"/>
+                    <p><strong>Next ></strong></p></a>
+                </div>
+            	<p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
+            </div>
+        </div>
+        <!--end challengeModal2-->
+    <script>
+		  document.write('<script src=' +
+		  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+		  '.js><\/script>')
+		  </script>
+		  <script src="js/foundation.min.js"></script>
+		  <script>
+		  $(document).ready(function(){
+		  $('#challengeModal-begin-link').click(function(){
+			  $("#challengeModal1").fadeOut(200);
+			  $("#challengeModal2").delay(200).fadeIn(200);
+		  });
+	  });
+  </script>
+
+{% endblock %}

@@ -1,0 +1,318 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------------------
+//Modal
+//-------------------------*/
+@media only screen and (min-width: 48em)
+.reveal-modal {
+	.reveal-modal{
+		top: 1em;
+	}
+}
+.reveal-modal-bg {
+	background: rgba(26, 26, 26, 0.7);
+}
+.reveal-modal {
+	background-color:#f2f2f2;
+	max-height: 600px;
+	box-shadow: 3px 3px 10px #000000, -3px -3px 10px #000000;
+}
+
+/*----------------------------
+//Modal content 
+//---------------------------*/
+
+iframe {
+	height:100%;
+	width:100%;
+	max-height: 550px;
+	height:550px;
+	border:none;
+}
+iframe body {
+	background-color:#f2f2f2;
+}
+.challengeModal-iframe-body {
+	background-color:#f2f2f2;
+}
+/*challengeModal1-------------------*/
+#challengeModal1 .challengeModal-text{
+	display:inline;
+}
+#challengeModal1 .challengeModal-text > h2 {
+	font-size:3em;
+	display:inline;
+	vertical-align:top;
+	padding-right:5%;
+	color:#455d78;
+	font-family: 'Alike', Georgia, Times New Roman, serif;
+}
+#challengeModal1 .challengeModal-text > .challengeModal-line-vertical{
+	display:inline;
+}
+#challengeModal1 .challengeModal-text > p {
+	display: inline;
+	vertical-align: top;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 15%;
+	max-width: 70%;
+	float: right;
+}
+#challengeModal1 .challengeModal-call {
+	max-width:214px;
+	max-height:100px;	
+	float:right;
+	margin-top:2em;
+}
+#challengeModal1 .challengeModal-call > a> img {
+	display:inline;
+}
+#challengeModal1 .challengeModal-call > a > p {
+	color:#333;	
+	display: inline;
+	position: relative;
+	bottom: 50px;
+	left: 40px;
+}
+#challengeModal1 .challengeModal-call > .challengeModal-skip {
+	float:right;
+	font-size:.8em;
+}
+#challengeModal1 .challengeModal-call > .challengeModal-skip > a{
+	text-decoration: underline;
+	position: relative;
+	bottom: 25px;
+	color:#455d78;
+	cursor:pointer;
+}
+#challengeModal1 .challengeModal-border {
+	margin-top:3em;	
+}
+/*challengeModal2-------------------*/
+#challengeModal2 .challengeModal-logo {
+	width: 90%;
+	padding-left: 10%;
+}
+#challengeModal2 .challengeModal-logo>h2 {
+	font-size: 2em;
+	display: inline;
+	color: #455d78;
+	font-family: 'Alike', Georgia, Times New Roman, serif;
+	position:relative;
+	left:11%;
+}
+#challengeModal2 .challengeModal-logo>img {
+	position:relative;
+	top:-30px;
+}
+
+#challengeModal2 .challengeModal-text {
+	max-width: 80%;
+	padding-left:20%;
+	margin: 3% 0 3% 0;
+}
+#challengeModal2 .challengeModal-text>p {
+	margin: 5% 0 5% 0;
+}
+#challengeModal2 .challengeModal-text>form {
+	padding: 2% 0 2% 0;
+}
+#challengeModal2 label.inline {
+	font-weight:800;	
+	margin-right:10px;
+}
+#challengeModal2 .challengeModal-input {
+	float:left;	
+}
+#challengeModal2 .challengeModal-input input {
+	box-shadow: 1px 1px 3px #444, -1px -1px 3px #444;
+	border-radius: 4px;
+}
+#challengeModal2 .challengeModal-next {
+	float:right;
+}
+#challengeModal2 .challengeModal-next>a>p {
+	position:relative;
+	top:-50px;
+	text-align:center;
+	color:#fff;
+}
+#challengeModal2 .challengeModal-skip>a{
+	text-decoration: underline;
+	position: relative;
+	bottom: -10px;
+	color:#455d78;
+	cursor:pointer;
+}
+/*challengeModal3-------------------*/
+#challengeModal3 .challengeModal-logo {
+	width: 90%;
+	padding-left: 10%;
+}
+#challengeModal3 .challengeModal-logo>h2 {
+	font-size: 2em;
+	display: inline;
+	color: #455d78;
+	font-family: 'Alike', Georgia, Times New Roman, serif;
+	position:relative;
+	left:11%;
+}
+#challengeModal3 .challengeModal-logo>img {
+	position:relative;
+	top:-30px;
+}
+
+#challengeModal3 .challengeModal-text {
+	max-width: 90%;
+	padding-left:10%;
+	margin: 3% 0 3% 0;
+}
+#challengeModal3 #challengeModal-diagnosis {
+	float:left;
+	width:70%;
+}
+#challengeModal3 .challengeModal-text > #diagnosis-img {
+	float:right;
+	width:30%;
+}
+#diagnosis-img > img {
+	padding: 5px;
+	margin:0 auto;	
+}
+#challengeModal3 .challengeModal-text>p {
+	margin: 5% 0 5% 0;
+}
+#challengeModal3 .challengeModal-next {
+	float:right;
+}
+#challengeModal3 .challengeModal-next>a>p {
+	position:relative;
+	top:-50px;
+	text-align:center;
+	color:#fff;
+}
+#challengeModal3 .challengeModal-skip>a{
+	text-decoration: underline;
+	position: relative;
+	bottom: -10px;
+	color:#455d78;
+	cursor:pointer;
+}
+/*challengeModal4-------------------*/
+#challengeModal4 .challengeModal-logo {
+	width: 90%;
+	padding-left: 10%;
+}
+#challengeModal4 .challengeModal-logo>h2 {
+	font-size: 2em;
+	display: inline;
+	color: #455d78;
+	font-family: 'Alike', Georgia, Times New Roman, serif;
+	position:relative;
+	left:11%;
+}
+#challengeModal4 .challengeModal-logo>img {
+	position:relative;
+	top:-30px;
+}
+#challengeModal4 .challengeModal-text {
+	max-width: 90%;
+	padding-left:10%;
+	margin: 3% 0 3% 0;
+}
+#challengeModal4 .challengeModal-text>p {
+	margin: 2% 0 2% 0;
+}
+#challengeModal4 #treatment-option1 {
+	display:inline;
+	float:left;
+	max-width:50%;
+	padding-right:5%;
+	border-right: 1px solid #000;
+}
+#challengeModal4 #treatment-option2 {
+	display:inline;
+	float:right;
+	max-width:50%;
+	padding-left:5%;
+}
+#challengeModal4 label{
+	display:inline;
+}
+#challengeModal4 #first-label{
+	padding: 0 30% 0 10%;
+}
+#challengeModal4 .challengeModal-next {
+	float:right;
+}
+#challengeModal4 .challengeModal-next>a>p {
+	position:relative;
+	top:-50px;
+	text-align:center;
+	color:#fff;
+}
+#challengeModal4 .challengeModal-skip>a{
+	text-decoration: underline;
+	position: relative;
+	bottom: -10px;
+	color:#455d78;
+	cursor:pointer;
+}
+/*challengeModal5-------------------*/
+#challengeModal5 h3 {
+	font-size: 2em;
+	display: inline;
+	color: #455d78;
+	font-family: 'Alike', Georgia, Times New Roman, serif;
+}
+#challengeModal5 #challengeModal-results-text{
+	float:left;
+	width:70%;
+}
+#challengeModal5 .challengeModal-line-vertical{
+	display:inline;
+	padding: 0 2% 0 2%;
+	float: left;
+}
+#challengeModal5 #challengeModal-results-lifespan {
+	float:left;
+	width:20%;
+	padding-top: 10%;
+}
+#challengeModal5 #challengeModal-results-lifespan h3 {
+	font-size:5em;
+	display:inline;
+	color:#455d78;
+	font-family: 'Alike', Georgia, Times New Roman, serif;
+	text-align:right;
+	padding:0;
+	margin:0;
+}
+#challengeModal5 #challengeModal-results-lifespan p {
+	text-align:right;
+	font-size:1em;
+	display:inline;
+	padding:0;
+	margin:0;
+	}
+#challengeModal5 .challengeModal-next {
+	float:right;
+}
+#challengeModal5 .challengeModal-next>a>p {
+	position:relative;
+	top:-50px;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+}
+#challengeModal5 #challengeModal-restart {
+	float:left;
+}
+#challengeModal5 #challengeModal-restart>a>p{
+	position:relative;
+	top:-50px;
+	text-align:center;
+	color:#333;
+}

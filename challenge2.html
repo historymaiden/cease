@@ -1,0 +1,146 @@
+{% extends "base.html"%}
+{% load humanize %}
+{% load url from future %} 
+   
+{% block content %}
+<body class="challengeModal-iframe-body">
+	<div id="challengeModal3">
+    		<div class="row">
+                    <div class="challengeModal-logo">
+                    	<h2>cease.</h2>
+                        <img src="img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="challengeModal-text">
+                	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
+                        <!-- for i in random -->
+			<p>[Name], in [Years to 65] from now, you are diagnosed with [metastatic pancreatic cancer]. 
+                        This means that like 75 percent of patients with this disease, your cancer has reached stage 
+                        IV before you even know you have it.</p>
+                        <p>Pancreatic cancer is the fourth deadliest cancer in the United States, mainly because it is 
+                        hard to catch early and spreads quickly. Since the pancreas is hidden behind other organs, 
+                        doctors cannot detect tumors during routine exams. Risk factors for pancreatic cancer include 
+                        [smoking, Diabetes, family history and obesity]. Symptoms of pancreatic cancer can be vague 
+                        and rarely show up early. These symptoms can include [yellow skin and eyes, pain in the upper 
+                        belly and mid back, weight loss and fatigue.]</p>
+                    </div>
+                    <div id="diagnosis-img">
+                    	<img src="http://www.cancer.gov/PublishedContent/Images/images/documents/eda0b72f-35f5-4b01-ab07-38f2167ca971/pancreasa1a.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="challengeModal-next">
+                    <a id="challengeModal-next-link1" href="#"><img src="img/button-small-blue-dark.png" alt="button"/>
+                    <p><strong>Next ></strong></p></a>
+                </div>
+                <p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
+            </div>
+    </div>
+    <!--end challengeModal3-->
+    <div id="challengeModal4" style="display:none;">
+    		<div class="row">
+            	<div class="twelve columns">
+                    <div class="challengeModal-logo">
+                    	<h2>cease.</h2>
+                        <img src="img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                    </div>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="challengeModal-text">
+                	<p>Having stage IV pancreatic cancer means the disease has spread to distant organs in your body and cannot be cured by surgery. At this point, your doctor has said you have around [six months to one year] left to live. Your main options are: </p>
+                    <div id="treatment-option1">
+                        <p>[Get chemotherapy], which uses drugs to treat your cancer. Most people with pancreatic cancer choose to 
+                        receive chemotherapy. For these patients, the chemo is normally given by vein during weekly appointments. 
+                        Depending on the severity of your cancer, chemo will likely extend your life by about [three to six months.]  
+                        </p>
+                    </div>
+                    <div id="treatment-option2">
+                        <p>[Enter Hospice], a government program that attempts to help you live the rest of your life 
+                        as comfortably as possible. Entering Hospice care requires stopping active treatment. 
+                        To receive the Hospice Medicare Benefit, a doctor must certify that you have about six months or less left to live.
+                        </p>
+                    </div>
+                </div>
+             </div>
+             <div class="row">
+                <form class="custom">
+                  <label for="radio1" id="first-label">
+                    <input name="radio1" type="radio" id="radio1" style="display:none;">
+                    <span class="custom radio"></span> [Get chemotherapy]
+                  </label>
+                  <label for="radio2">
+                    <input name="radio2" type="radio" id="radio2" style="display:none;">
+                    <span class="custom radio"></span> [Enter Hospice]
+                  </label>
+                </form>
+            </div>
+            <div class="row">
+                <div class="challengeModal-next">
+                    <a href="#" id="challengeModal-next-link2"><img src="img/button-small-blue-dark.png" alt="button"/>
+                    <p><strong>Next ></strong></p></a>
+                </div>
+            	<p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
+            </div>
+    </div>
+    <!--end challengeModal4-->
+    <div id="challengeModal5" style="display:none;">
+    		<div class="row">
+            	<div id="challengeModal-results-text">
+                  		<h3>your treatment results</h3>
+                        <p> By choosing not to pursue chemotherapy, you remain on a life expectancy trajectory of about six to 12 months. 
+                        In your remaining time, your treatment will be focused on symptom relief and pain management. 
+                        Many patients who choose this option do so because they believe it offers a higher quality of life 
+                        and allows them to die in their own home. In most cases, Hospice nurses provide symptom management 
+                        and emotional support to patients and caretakers.</p>
+                        <p><strong>Estimated cost:</strong> If you are currently on Medicare, you can receive Hospice care for free.</p>
+                        <p><strong>Doctor visits:</strong> In most cases, Hospice nurses will come care for you in your home during weekly appointments.</p>
+                  </div>
+                  <img class="challengeModal-line-vertical" class="hide-for-small" src="img/charcoal-line-vertical.png"/>
+                  <div id="challengeModal-results-lifespan">
+                  		<h3>6</h3>
+                        <p>months added to life</p>
+                  </div>
+            </div>
+            
+            <div class="row">
+                <div class="challengeModal-next">
+                    <a id="challengeModal-next-link3" onclick="parent.closeModal()"><img src="img/button-big-blue-dark.png" alt="button"/>
+                    <p><strong>Learn more about end stage care ></strong></p></a>
+                </div>
+            	<div id="challengeModal-restart">
+                	<a href="#" id="cllangeModal-restart-link"><img src="img/button-big-blue-light.png" alt="button"/>
+                    <p><strong>< Try again</strong></p></a>
+                </div>
+            </div>
+            <div class="row">
+            	<img class="challengeModal-border" src="img/heartbeat-border-bottom.png" alt="border"/>
+            </div>
+    </div>
+    <!--end challengeModal5-->
+    <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+  $(document).ready(function(){
+	  $('#challengeModal-next-link1').click(function(){
+		  $("#challengeModal3").fadeOut(200);
+		  $("#challengeModal4").delay(200).fadeIn(200);
+	  });
+	  $('#challengeModal-next-link2').click(function(){
+		  $("#challengeModal4").fadeOut(200);
+		  $("#challengeModal5").delay(200).fadeIn(200);
+	  });
+	
+  });
+</script>
+
+  <script src="js/foundation/foundation.forms.js"></script>
+
+
+{% endblock %}

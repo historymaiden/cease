@@ -8,9 +8,10 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'cease.views.home', name='home'),
     #url(r'^cease/', include('cease.foo.urls')),
-    url(r'^cease/$', 'disease.views.home'),
-    (r'^static_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': '/'}),
+    url(r'^', include('disease.urls')),
+    #url(r'^cease/$', 'disease.views.home'),
+    #(r'^static_media/(?P<path>.*)$', 'django.views.static.serve',
+     #   {'document_root': '/'}),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
