@@ -1,0 +1,80 @@
+[
+    {
+        "pk":1,
+        "model": "disease.Treatments",
+        "fields": {
+            "scenario": "Having stage IV pancreatic cancer means the disease has spread to distant organs in your body and cannot be cured by surgery.", 
+            "lifeExpectancy": "six months to one year",
+            "treatment": "Get chemotherapy, which uses drugs to treat your cancer. Most people with pancreatic cancer choose to receive chemotherapy. For these patients, the chemo is normally given by vein during weekly appointments.",
+            "lifeExtension": "three to six months", 
+            "choice": "By selecting to treat your cancer with chemotherapy, you've added about three to six months to your original life expectancy, meaning you now have approximately nine to 18 months left to live. Side effects from chemotherapy vary by patient, but they can include an increased likelihood to contract infection, hair loss, weight loss, nausea and vomiting, diarrhea and mouth sores. Most side effects stop when treatment ends.", 
+            "cost": "$49,000",
+            "doctorVisits": "Weekly or biweekly appointments for treatment and checkups will last for about four to six months depending on the stage of your cancer." 
+        }
+    },
+    {
+        "pk":2,
+        "model": "disease.Treatments",
+        "fields": {
+            "scenario": "Having stage IV pancreatic cancer means the disease has spread to distant organs in your body and cannot be cured by surgery.", 
+            "lifeExpectancy": "six months to one year",
+            "treatment": "Enter Hospice, a government program that attempts to help you live the rest of your life as comfortably as possible. Entering Hospice care requires stopping active treatment. To receive the Hospice Medicare Benefit, a doctor must certify that you have about six months or less left to live.",
+            "lifeExtension": "minimal", 
+            "choice": "By choosing not to pursue chemotherapy, you remain on a life expectancy trajectory of about six to 12 months. In your remaining time, your treatment will be focused on symptom relief and pain management. Many patients who choose this option do so because they believe it offers a higher quality of life and allows them to die in their own home. In most cases, Hospice nurses provide symptom management and emotional support to patients and caretakers.", 
+            "cost": "If you are currently on Medicare, you can receive Hospice care for free.",
+            "doctorVisits": "In most cases, Hospice nurses will come care for you in your home during weekly appointments." 
+        }
+    },
+    {
+        "pk":3,
+        "model": "disease.Treatments",
+        "fields": {
+            "scenario": "Like many patients with chronic kidney disease, you suffer from other ailments. You are also dealing with vascular disease, which means you do not qualify for a kidney transplant. Currently, your kidneys are functioning at 15 percent capacity.", 
+            "lifeExpectancy": "six months to one year",
+            "treatment": "Start dialysis, the most common treatment for people with kidney disease.  Dialysis helps keeps your body in balance by removing waste from your body, maintaining safe levels of chemicals like potassium and sodium and helping to regulate blood pressure. Hemodialysis, the most common type of dialysis in the U.S., involves undergoing minor surgery to connect an artificial kidney to your blood vessels.",
+            "lifeExtension": "one year", 
+            "choice": "Choosing to avoid kidney failure by starting dialysis means that you will extend your life by about one year. Since dialysis treatments require frequent hospital visits, most patients are not able to keep full-time jobs. Side effects from dialysis can include leg swelling, risks of heart failure and bone pain. Additionally, most patients on dialysis are infertile.", 
+            "cost": "$82,200 per year",
+            "doctorVisits": "On average, dialysis treatments last about four hours and are done three times per week." 
+        }
+    },
+    {
+        "pk":4,
+        "model": "disease.Treatments",
+        "fields": {
+            "scenario": "Like many patients with chronic kidney disease, you suffer from other ailments. You are also dealing with vascular disease, which means you do not qualify for a kidney transplant. Currently, your kidneys are functioning at 15 percent capacity.", 
+            "lifeExpectancy": "six months to one year",
+            "treatment": "Seek conservative management, which is often seen as an option for patients who view dialysis as a burden in late life.  Depending on the health of your kidney, opting for conservative management can make your life expectancy drop to anywhere from several days to several weeks to six months.",
+            "lifeExtension": "minimal", 
+            "choice": "For patients 75 and older, studies show that conservative management provides a higher quality of life.  Side effects are not really an issue with conservative management, but most doctors recommend patients undergo additional palliative care.", 
+            "cost": "Depending on your health insurance coverage, you would only be required to pay the co-payments for your prescriptions.",
+            "doctorVisits": "Unlike dialysis treatments, conservative management does not require regular doctor appointments." 
+        }
+    },
+    {
+        "pk":5,
+        "model": "disease.Treatments",
+        "fields": {
+            "scenario": "Since you have previously had a heart attack and are over 65 years-old, receiving a transplant is not an option for you.", 
+            "lifeExpectancy": "six months or less left to live",
+            "treatment": "Get a left ventricular assist device, which is a mechanical pump that does the work of pumping your blood and is powered by rechargeable batteries. For many patients, this can be a longer-term option.",
+            "lifeExtension": "1 to 5 years depending on condition", 
+            "choice": "By choosing to get a left ventricular assist device, you have likely lengthened your life span by a few years. Some stipulations accompany this surgery, including not driving or lifting more than 5 pounds for six weeks. Other complications can include stroke and internal bleeding. Patients are also advised not to drink or smoke after receiving an lvad.", 
+            "cost": "$222,460 for the first year",
+            "doctorVisits": "Following the 4 to 8 hour surgery, recovery time requires you to spend about 10 to 14 days in the hospital, 3 to 7 of those will be spent in ICU.  You will then come in for weekly checkups the first month. These visits will get less frequent with time, usually about once a month." 
+        }
+    },
+    {
+        "pk":6,
+        "model": "disease.Treatments",
+        "fields": {
+            "scenario": "Since you have previously had a heart attack and are over 65 years-old, receiving a transplant is not an option for you.", 
+            "lifeExpectancy": "six months or less left to live",
+            "treatment": "Go on continuous intravenous medication. This measure provides patients with a way to live more comfortably at home, but it will most likely not prolong life.",
+            "lifeExtension": "minimal", 
+            "choice": "Going on continuous intravenous medication is an option that helps patients feel better but not live longer. These medications are often paired with other palliative care measures depending on the patient's wishers. This is seen as an option for someone who does not want to or physically cannot undergo the surgery to receive an assist device.", 
+            "cost": "Depending on your health insurance coverage, you would only be required to pay the co-payments for your prescriptions. ",
+            "doctorVisits": "Depending on your condition, you would likely attend monthly checkups." 
+        }
+    }
+]    

@@ -1,0 +1,39 @@
+[
+    {
+        "pk":1,
+        "model": "disease.Disease",
+        "fields": {
+            "disease": "metastatic pancreatic cancer",
+            "intro": "This means that like 75 percent of patients with this disease, your cancer has reached stage IV before you even know you have it.",
+            "background": "Pancreatic cancer is the fourth deadliest cancer in the United States, mainly because it is hard to catch early and spreads quickly. Since the pancreas is hidden behind other organs, doctors cannot detect tumors during routine exams. Risk factors for pancreatic cancer include smoking, Diabetes, family history and obesity. Symptoms of pancreatic cancer can be vague and rarely show up early. These symptoms can include yellow skin and eyes, pain in the upper belly and mid back, weight loss and fatigue.", 
+            "image": "http://www.cancer.gov/PublishedContent/Images/images/documents/eda0b72f-35f5-4b01-ab07-38f2167ca971/pancreasa1a.jpg"
+            
+        }
+    },
+    
+    {
+        "pk":2,
+        "model": "disease.Disease",
+        "fields": {
+            "disease": "end-stage kidney disease",
+            "intro": "Like 26 million Americans, you have lived with chronic kidney disease for years. Now, your damaged kidneys are not going to be able to filter blood as they should and are approaching failure.",
+            "background": "Diabetes and high blood pressure are responsible for almost two-thirds of chronic kidney disease in the United States.  Additionally, African Americans aged 25 to 44 years-old are 20 times more likely to have kidney failure than whites in the same age group. Most symptoms of kidney disease are not severe until the disease becomes advanced. Early symptoms can include feeling tired, trouble concentrating, poor appetite, night-time muscle cramps, swollen feet, frequent urination and dry skin.", 
+            "image": "http://www.nkdep.nih.gov/images/nkdep-gfr-uacircles.jpg"
+            
+        }
+    },
+    
+    
+    {
+        "pk":3,
+        "model": "disease.Disease",
+        "fields": {
+            "disease": "end-stage heart disease",
+            "intro": "This means that like about 5 million Americans, your heart is no longer able to pump enough blood to meet your body's needs and will likely fail soon.",
+            "background": "While heart disease is the number one cause of death in the United States, many of these deaths occur before the patient reaches end-stage. Heart failure is often caused by coronary artery disease, high blood pressure and diabetes and causes about 300,000 deaths in the U.S. each year. It is more common in patients who are over 65 years-old, overweight and African American. A weakened heart often causes shortness of breath, fatigue and leg swelling due to fluid backup.", 
+            "image": "http://nihseniorhealth.gov/heartfailure/heartfailuredefined/images/heartfailure_r.jpg"
+            
+        }
+    }
+    
+]

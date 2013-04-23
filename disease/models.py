@@ -12,16 +12,17 @@ class Disease (models.Model):
         ordering = ('disease', 'pk')
     
     def __unicode__(self):
-        return self.disease
+        return U'%s | %s' %(self.pk, self.disease)
 
 class Treatments (models.Model):
-    scenario = models.CharField(max_length=50)
+    scenario = models.CharField(max_length=5000)
     disease = models.ManyToManyField("Disease")
-    treatment = models.CharField(max_length=300)
-    life_extension = models.CharField(max_length=5000, blank=True)
-    choice = models.CharField(max_length=500, blank=True)
-    cost = models.FloatField(null=False, max_length=10)
-    doctor_visits = models.IntegerField(null=False, max_length=3)
+    lifeExpectancy = models.CharField(max_length=200)
+    treatment = models.CharField(max_length=5000)
+    lifeExtension = models.CharField(max_length=200, blank=True)
+    choice = models.CharField(max_length=5000, blank=True)
+    cost = models.CharField(null=False, max_length=5000)
+    doctorVisits = models.CharField(null=False, max_length=5000)
 
     
     class Meta(object):
