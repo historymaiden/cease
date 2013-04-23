@@ -3,6 +3,7 @@
 {% load url from future %} 
    
 {% block content %}
+
 <body class="challengeModal-iframe-body">
 	<div id="challengeModal3">
     		<div class="row">
@@ -14,17 +15,15 @@
             <div class="row">
                 <div class="challengeModal-text">
                 	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
-                        {% random %}
-			<p>[Name], in [Years to 65] from now, you are diagnosed with {{ i.disease }}. {{ i.intro }}
-                        {{ i.background }}
-                        {{ i.image }}
+                        {% if random %}
+			<p>[Name], in [Years to 65] from now, you are diagnosed with {{ disease.disease }}.
+			{{ disease.intro }}
+                        {{ disease.background }}
+                        <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
                         {% else %}
-                        <p>Oops! We're encountered a problem.</p>
-                        {% endif %}
-                    </div>
-                    <div id="diagnosis-img">
-                    	<img src="http://www.cancer.gov/PublishedContent/Images/images/documents/eda0b72f-35f5-4b01-ab07-38f2167ca971/pancreasa1a.jpg" />
-                    </div>
+                        <p>Oops! We've encountered a problem.</p>
+			{% endif %}
+                    </div>                    
                 </div>
             </div>
             <div class="row">
@@ -63,16 +62,7 @@
                 </div>
              </div>
              <div class="row">
-                <form class="custom">
-                  <label for="radio1" id="first-label">
-                    <input name="radio1" type="radio" id="radio1" style="display:none;">
-                    <span class="custom radio"></span> [Get chemotherapy]
-                  </label>
-                  <label for="radio2">
-                    <input name="radio2" type="radio" id="radio2" style="display:none;">
-                    <span class="custom radio"></span> [Enter Hospice]
-                  </label>
-                </form>
+               
             </div>
             <div class="row">
                 <div class="challengeModal-next">

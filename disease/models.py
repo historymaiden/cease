@@ -4,9 +4,9 @@ from django.db import models
 
 class Disease (models.Model):
     disease = models.CharField(max_length=50, unique=True)
-    intro = models.CharField(max_length=100, blank=True)
-    background = models.CharField(max_length=500, blank=True)
-    image = models.CharField(max_length=500)
+    intro = models.CharField(max_length=200, blank=True)
+    background = models.CharField(max_length=600, blank=True)
+    image = models.CharField(max_length=100)
     
     class Meta(object):
         ordering = ('disease', 'pk')
