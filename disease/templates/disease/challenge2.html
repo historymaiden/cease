@@ -14,10 +14,12 @@
             <div class="row">
                 <div class="challengeModal-text">
                 	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
-                        {% if i in random %}
+                        {% random %}
 			<p>[Name], in [Years to 65] from now, you are diagnosed with {{ i.disease }}. {{ i.intro }}
                         {{ i.background }}
                         {{ i.image }}
+                        {% else %}
+                        <p>Oops! We're encountered a problem.</p>
                         {% endif %}
                     </div>
                     <div id="diagnosis-img">
