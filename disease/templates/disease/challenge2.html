@@ -14,16 +14,11 @@
             <div class="row">
                 <div class="challengeModal-text">
                 	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
-                        <!-- for i in random -->
-			<p>[Name], in [Years to 65] from now, you are diagnosed with {{ i.disease }}[metastatic pancreatic cancer]. 
-                        This means that like 75 percent of patients with this disease, your cancer has reached stage 
-                        IV before you even know you have it.</p>
-                        <p>Pancreatic cancer is the fourth deadliest cancer in the United States, mainly because it is 
-                        hard to catch early and spreads quickly. Since the pancreas is hidden behind other organs, 
-                        doctors cannot detect tumors during routine exams. Risk factors for pancreatic cancer include 
-                        [smoking, Diabetes, family history and obesity]. Symptoms of pancreatic cancer can be vague 
-                        and rarely show up early. These symptoms can include [yellow skin and eyes, pain in the upper 
-                        belly and mid back, weight loss and fatigue.]</p>
+                        {% if i in random %}
+			<p>[Name], in [Years to 65] from now, you are diagnosed with {{ i.disease }}. {{ i.intro }}
+                        {{ i.background }}
+                        {{ i.image }}
+                        {% endif %}
                     </div>
                     <div id="diagnosis-img">
                     	<img src="http://www.cancer.gov/PublishedContent/Images/images/documents/eda0b72f-35f5-4b01-ab07-38f2167ca971/pancreasa1a.jpg" />
