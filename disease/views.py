@@ -5,9 +5,10 @@ from django.template import RequestContext
 import random
 
 def home(request):
-      
-    
     return render(request, "disease/home.html")
+
+def challenge(request):
+    return render(request, "disease/challenge1.html")
 
 def disease(request, pk):
     random_id = random.randrange(0,2)

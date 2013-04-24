@@ -9,26 +9,26 @@
     		<div class="row">
                     <div class="challengeModal-logo">
                     	<h2>cease.</h2>
-                        <img src="img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
                     </div>
             </div>
             <div class="row">
                 <div class="challengeModal-text">
                 	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
                         {% if random %}
-			<p>[Name], in [Years to 65] from now, you are diagnosed with {{ disease.disease }}.
-			{{ disease.intro }}
-                        {{ disease.background }}
+			<p>cookie('eol_challengeName')[Name], in cookie('eol_challengeAge')[Years to 65] from now, you are diagnosed with {{ disease.disease }}.<br><br>
+			{{ disease.intro }}<br><br>
+                        {{ disease.background }}<br><br>
                         <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
                         {% else %}
-                        <p>Oops! We've encountered a problem.</p>
+                        <p>Oops! We've encountered a problem. Click <a href="#">here</a> to return to the main site.</p>
 			{% endif %}
                     </div>                    
                 </div>
             </div>
             <div class="row">
                 <div class="challengeModal-next">
-                    <a id="challengeModal-next-link1" href="#"><img src="img/button-small-blue-dark.png" alt="button"/>
+                    <a id="challengeModal-next-link1" href="#"><img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
                     <p><strong>Next ></strong></p></a>
                 </div>
                 <p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
@@ -40,7 +40,7 @@
             	<div class="twelve columns">
                     <div class="challengeModal-logo">
                     	<h2>cease.</h2>
-                        <img src="img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
                     </div>
                  </div>
             </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="challengeModal-next">
-                    <a href="#" id="challengeModal-next-link2"><img src="img/button-small-blue-dark.png" alt="button"/>
+                    <a href="#" id="challengeModal-next-link2"><img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
                     <p><strong>Next ></strong></p></a>
                 </div>
             	<p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>

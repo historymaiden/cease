@@ -21,23 +21,26 @@
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.validate.js"></script>
-   
 </head>
 <!--because of iFrames <body> tag starts in the template-->
     {% block content %}
     {% endblock %}
-    
     <script>
-        $(document).foundation();
-    </script>
-    
-    <script>
-        document.write('<script src=' +
-        ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-        '.js><\/script>')
-    </script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
   
-    <script src="{{ STATIC_URL }}js/foundation.min.js"></script>
+  <script src="{{ STATIC_URL }}js/foundation.min.js"></script>
+  <script src="{{ STATIC_URL }}js/foundation/foundation.section.js"></script>
+  <script src="{{ STATIC_URL }}js/vendor/custom.modernizr.js"></script>
+  <!--highcharts import below-->
+	<script src="{{ STATIC_URL }}js/Highcharts-3.0.1/js/highcharts.js"></script>
+	<script src="{{ STATIC_URL }}js/cease-highcharts.js"></script>
+
+ <script>
+   $(document).foundation();
+ </script>
     
 </body>
 

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Cease</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/cease-main.css" />
+  <link rel="stylesheet" href="css/cease-challenge.css" />
+  
+ <link href='http://fonts.googleapis.com/css?family=Alike' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/challenge.js"></script>
+    <script>
+		var heartChartWidth = $('#heart-chart-wrapper').width();
+		$('#heartTimeline').css('width', heartChartWidth + 'px');
+	</script>
+</head>
+<body>
+<!--"header" below-->
+<div class="row">
+    <div class="large-12 columns topArea">
+        <img src="img/heartbeatWhiteLogo.png" alt="heartbeat logo" />
+    </div>
+</div>
+<div class="row">
+    <div class="twelve columns">
+	<!--"take the challenge" box-->
+		<div id="challengeQuestion">
+			<p>
+			Even with the advances of modern medicine, many patients fighting chronic disease die despite undergoing treatment. Cease asks you to put yourself in the shoes of a patient reaching the end stages of care and decide what matters most to you. Would you seek further treatment or try to maintain a higher quality of life?</p>
+			<div id="challengeButton">
+			<a href="#" data-reveal-id="challengeModal"><img src="img/takeChallengeBtn.png"></a>
+			</div>
+	
+      </div> 
+    <!--close challenge question div-->	
+    </div>
+</div>
+<!--close row-->
+<div class="row">
+	<div class="twelve columns">
+        <!--begin tabs below-->	
+        <div class="section-container tabs" data-section="tabs">
+          <section>
+            <p class="title" data-section-title><a href="#">Heart Disease</a></p>
+            <div class="content" data-section-content id="heart">
+            
+            	<div class="row feature-chart">
+            		<div class="large-12 columns">
+                    	<div id="heart-chart-wrapper">
+                        	<div class="chart-inner">
+               					<div id="heartTimeline" style="width:100%;margin: 0 auto;max-width:938px"></div>
+                            </div>
+                        </div>
+               			<p>Heart Disease is currently 
+               			the number one cause of death in the United States
+               			for both men and women. According to The Heart Foundation,
+               			“Every 33 seconds someone in the United States dies from 
+               			cardiovascular disease, which is roughly the equivalent 
+               			of a September 11th-like tragedy repeating itself every 
+               			24 hours, 365 days a year.” This timeline uses 
+               			age-adjusted death rates, which are computed by 
+               			the direct method that uses standard population 
+               			by age distribution of the U.S. for the year 2000, 
+               			per 100,000 population.</p>
+               		</div> <!--close 12 columns-->
+               	</div> <!--close row-->
+                <div class="row small-charts">
+            		<div class="large-6 columns">
+                		<div id="heartDemo" style="width:100%;margin: 0 auto;max-width:454px"></div>
+                		<p>Heart disease is the leading cause of death in the U.S.
+                		for Hispanics, African Americans and whites, according 
+                		to the CDC. For Alaska natives, Asians, Pacific 
+                		Islanders and American Indians, the disease is second
+                		only to cancer. About 600,000 Americans die from heart
+                		disease per year, meaning 25% percent of deaths each year
+                		for all races and ethnic groups are attributed to heart 
+                		disease.</p>
+                    </div>
+                    <!--close 6-->
+            		<div class="large-6 columns">
+              			<div id="heartStages" style="width:100%;margin: 0 auto;max-width:454px"></div>
+              			<p>According to the Heart Foundation, 
+              			1.5 million Americans have heart attacks 
+              			and strokes each year. Heart disease and 
+              			strokes are also among the leading causes 
+              			of disability in the U.S. The information 
+              			in the chart came from the Morbidity and Mortality 
+              			2012 Chart Book, which used data for the number of 
+              			deaths in 2008-2009 that were Cardiovascular related. </p>
+                    </div>
+                    <!--close 6-->
+                </div>
+                <!--end row-->
+            </div>
+          </section>
+          <section>
+            <p class="title" data-section-title><a href="#">Kidney Cancer</a></p>
+            <div class="content" data-section-content id="kidney">
+            <div class="row feature-chart">
+            		<div class="large-12 columns">
+                		<div id="kidneyTimeline" style="width:100%;margin: 0 auto;max-width:938px"></div>
+                		<p>The National Cancer Institute estimates kidney
+                		cancer will lead to more than 12,000 deaths in 2013
+                		and almost 60,000 new cases of the cancer. The lifetime 
+                		risk for developing this type of cancer is 1 in 63 or 1.6
+                		percent and is in the top 10 most prevalent forms of cancer.</p>
+                    </div>
+                    <!--close 12-->
+            </div>
+            <!--end row-->
+            <div class="row small-charts">
+            		<div class="large-6 columns">
+                		<div id="kidneyDemo"  style="width:100%;margin: 0 auto;max-width:454px"></div>
+                		<p>In both men and women, kidney cancer
+                		is the third leading cause of death for 
+                		Native Americans and Alaskan Natives. Asian Americans 
+                		and Pacific Islanders have lower mortality rates 
+                		compared with other races and ethnic groups. 
+                		Also, men are two-three times more likely to 
+                		develop kidney cancer across all racial and ethnic
+                		groups. The rates are based on U.S. kidney cancer
+                		patients who died with the disease in 2005-2009.</p>
+                    </div>
+                    <!--close 6-->
+            		<div class="large-6 columns">
+                		<div id="kidneyStages"  style="width:100%;margin: 0 auto;max-width:454px"></div>
+                		<p>The 5-year survival rate refers to the percentage of patients who
+                		will live at least five years after their cancer has been discovered
+                		and treatment is attempted. Survival rate percentages are based on
+                		patients whose cancer was found and treated more than five years ago.
+                		The numbers above were based on the National Cancer Database information
+                		from patient’s whose kidney cancer was discovered between 2001 and 2002.</p>
+                    </div>
+                    <!--close 6-->
+            </div>
+            <!--end row-->
+          </section>
+          <section>
+            <p class="title" data-section-title><a href="#">Alzheimers</a></p>
+            <div class="content" data-section-content id="alzheimers">
+            <div class="row feature-chart">
+            		<div class="large-12 columns">
+              			<div id="alzhTimeline" style="width:100%;margin: 0 auto;max-width:938px"></div>
+              			 <p>According to the Alzheimer’s Association 2013 report, 
+                        Alzheimer’s is the sixth leading cause of death in the United States. 
+                        If a person’s death certificate lists Alzheimer’s as the underlying cause of death, 
+                        then the CDC considers a patient to have died from the disease. 
+                        Alzheimer’s is difficult to attribute to the cause of death,
+                        as patients with the disease will die from complications or
+                        other causes such as pneumonia. Timeline information derived from 
+                        National Vital Statistics Reports and are based on death rates 
+                        per 100,000 population.</p>
+                    </div>
+                    <!--end 12-->
+             </div>
+             <!--end row-->
+             <div class="row small-charts">
+            		<div class="large-6 columns">
+                		<div id="alzhDemo"  style="width:100%;margin: 0 auto;max-width:454px"></div>
+                	<p>Despite many people who are diagnosed with Alzheimer’s are older white people, 
+                    genetic factors cause African Americans to be twice as likely
+                    to develop the disease than white people. Hispanics are almost one and one-half
+                    times as likely to develop the disease. The information in the graph derived
+                    from the Washington Heights-Inwood Columbia Aging Project cited by the
+                    February 2013 Alzheimer’s Association factsheet. </p>
+                    </div>
+                 	<!--end 6-->
+                    <div class="large-6 columns">
+                		<div id="alzhStages"  style="width:100%;margin: 0 auto;max-width:454px"></div>
+						<p>As the population continues to live longer
+						and the diagnosis of Alzheimer’s continues to rise, 
+						the cost of health care, long-term care and hospice 
+						are projected by the Alzheimer’s Association to increase
+						from $203 billion in 2013 to $1.2 trillion by 2050. 
+						Total per person payments in 2008 were three times more for
+						patients with Alzheimer’s or some form of Dementia than for
+						patients without the disease. The information in the graph 
+						came form unpublished data from the Medicare Current Beneficiary
+						Survey for 2008 used in the 2013 Alzheimer’s Association Disease
+						Facts and Figures Report. </p> 
+                     </div>
+                     <!--end 6-->
+             </div>
+             <!--end row-->
+            </div>
+          </section>
+          <section>
+            <p class="title" data-section-title><a href="#">Pancreatic Cancer</a></p>
+            <div class="content" data-section-content>
+              <div class="row">
+			<div class="large-12 columns">
+				<div id="pancreaticDeaths"  style="width:100%;margin: 0 auto;max-width:938px"></div>
+				<p>Currenctly, pancreatic cancer is the fourth deadliest cancer in the United States. Since it has no symptoms and is hard to diagnose early, most patients have already entered advanced stages by the time their cancer is found. As the chart above shows, this means that a majority of people diagnosed with pancreatic cancer die from it.</p></p>
+			</div>
+			<!--end 12-->
+		</div>
+             <!--end row-->
+             <div class="row">
+            		<div class="large-6 columns">
+                		<div id="pancreaticStages" style="width:100%;margin: 0 auto;max-width:454px"></div>
+				<p>The American Cancer Society estimates that about 38,460 people will die froms pancreatic cancer in the U.S. in 2013.
+But as the chart above shows, these diagnoses will not affect all demographics equally. Female patients tend to have better survival rates when the cancer is found early.</p>
+                    </div>
+                 	<!--end 6-->
+                    <div class="large-6 columns">
+                		<div id="pancreaticPrevalence" style="width:100%;margin: 0 auto;max-width:454px"></div>
+				<p>The American Cancer Society estimates that about 45,220 people will be diagnosed with pancreatic cancer in the U.S. in 2013. As the chart above shows, pancreatic cancer is more prominent in white patients.</p>
+                    </div>
+             </div>
+             <!--end row-->
+            </div>
+          </section>
+          <section>
+            <p class="title" data-section-title><a href="#">Resources</a></p>
+            <div class="content" data-section-content>
+              <p>We'd like to give a special thanks to <a href="http://www.unckidneycenter.org/about/hladik.html">Gerald Hladik,</a>
+                <a href="http://findadoc.unchealthcare.org/directory/profile.asp?dbase=main&setsize=5&pict_id=0000372">Carla Sueta</a> and
+                <a href="http://www.nccancerhospital.org/members/stephen-a.-bernard">Stephen Bernard,</a> three UNC doctors whose expertise helped us create this project.</p>
+                
+                
+                <br>
+                <h5>Additional sources:</h5>
+                
+                <h6>Alzheimer's disease</h6>
+                <a href="Mhttp://www.mdch.state.mi.us/pha/osr/deaths/AlzheimersDX.ASP">Michigan Department of Community Health</a><br>
+                <a href="http://www.cdc.gov/nchs/data/series/sr_20/sr20_028.pdf">Center for Disease Control and Prevention</a><br>
+                <a href="http://www.alz.org/downloads/facts_figures_2013.pdf">Alzheimer's Association</a><br>
+                
+                <h6>End-stage heart disease</h6>
+                <a href="http://www.mdch.state.mi.us/pha/osr/deaths/Heartdx.asp">Michigan Department of Community Health</a><br>
+                <a href="http://www.cdc.gov/heartdisease/facts.htm">Center for Disease Control and Prevention</a><br>
+                <a href="http://www.nhlbi.nih.gov/resources/docs/2012_ChartBook_508.pdf">National Institutes of Health</a><br>
+                <a href="http://my.americanheart.org/idc/groups/ahamah-public/@wcm/@sop/@smd/documents/downloadable/ucm_434593.pdf">American Heart Association</a><br>
+                <a href="http://www.theheartfoundation.org/heart-disease-facts/heart-disease-statistics/">The Heart Foundation</a><br>
+                <a href="http://www.nlm.nih.gov/medlineplus/heartfailure.html">Medline Plus</a><br>
+                <a href="http://www.hfsa.org/heart_failure_facts.asp">Heart Failure Society of America</a><br>
+                <a href="http://ats.ctsnetjournals.org/cgi/content/full/71/3_suppl/S195">The Society of Thoracic Surgeons</a><br>
+                
+                <h6>End-stage kidney disease</h6>
+                <a href="http://www.nlm.nih.gov/medlineplus/chronickidneydisease.html">Medline Plus</a>
+                <a href="http://www.kidney.org/kidneydisease/aboutckd.cfm">National Kidney Foundation</a>
+                <a href="http://www.kidney.niddk.nih.gov/kudiseases/pubs/choosingtreatment/#refuse">National Institute of Diabetes and Digestive and Kidney Diseases</a>
+                
+                
+                
+                <h6>Pancreatic cancer</h6>
+                <a href="http://www.nlm.nih.gov/medlineplus/pancreaticcancer.html#cat1">Medline Plus</a>
+                <a href="http://www.cancer.gov/cancertopics/wyntk/pancreas/page3">National Cancer Institute</a>
+                <a href="http://www.ncbi.nlm.nih.gov/pubmed/22415469">National Center for Biotechnology Information</a>
+                <a href="http://www.cancer.org/cancer/pancreaticcancer/detailedguide/pancreatic-cancer-treating-chemotherapy">American Cancer Society</a>
+                <a href="http://www.hospice.org/hospice-care/what-is-hospice/">Hospice, Inc.</a>
+                <a href="http://www.nkdep.nih.gov/living/kidney-failure.shtml">National Kidney Disease Education Program</a>
+
+            </div>
+          </section>
+    </div>
+    </div>
+    <!--end twelve columns-->
+</div>
+<!--end row-->
+
+<div id="challengeModal" class="reveal-modal xlarge">
+    	<iframe seamless scrolling="no" src="challenge1.html" name="challenge1" id="challenge1"></iframe>
+</div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.section.js"></script>
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <!--highcharts import below-->
+	<script src="js/Highcharts-3.0.1/js/highcharts.js"></script>
+	<script src="js/cease-highcharts.js"></script>
+
+ <script>
+   $(document).foundation();
+  
+</script>
+  
+</body>
+
+
+
+</html>

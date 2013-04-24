@@ -5,9 +5,9 @@
     <title>Cookies</title>
     <!--<link rel="stylesheet" href="styles.css" type="text/css">  -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
     
     
     <script>
@@ -26,41 +26,37 @@
    // some other code
    // maybe disabling submit button
    // then:
-             setCookie(name, age) //for calc, change age to years
+             setCookie() //for calc, change age to years
  } 
           
             });
             
         });
         
-        
-        
-        
-        function setCookie(name,age){   //for calc change age to 'years'
-                //collect the cookie for Name and Age fields
-                $.cookie("eol_challengeName", name , { expires: 1,  path: '/' });
-                
-                cookie = parseInt($.cookie('eol_challengeAge'));
-                var years = 65 - age; //calcs the years
-                $.cookie("eol_challengeAge", age , { expires: 1,  path: '/' }); //for calc change age to 'years'
-                //insert age calc here
-                
-                
-                
-                alert($.cookie("eol_challengeName" + "eol_challengeAge"));
-                //print the data in the console
-                console.log($.cookie('eol_challengeName'));
-                
-                //take the age entered and turn it into a number so the disease age can be calculated
-                //use in another script for the second page for on document ready get this cookie
+    function setCookie() {
+        cookievalue= escape(document.input.name.value) + ";";
+        document.cookie = "eol_challengeName=" + name;
+        console.log(name);
+        alert("setting cookies : " + "name=" + name);
+        readCookie();
+    }
     
-                //I've stopped getting errors with the current code but I don't know where 'value' comes into play
-               //don't think I need this line: value = (eval(name + age));               
-               //don't think I need this line: $.cookie('eol_challengeName', value , { expires: 1,  path: '/' });
-                
-            }; 
+    function ReadCookie()
+{
+   var allcookies = document.cookie;
+   alert("All Cookies : " + allcookies );
+
+   // Get all the cookies pairs in an array
+   cookiearray  = allcookies.split(';');
+
+   // Now take key value pair out of this array
+   for(var i=0; i<cookiearray.length; i++){
+      name = cookiearray[i].split('=')[0];
+      value = cookiearray[i].split('=')[1];
+      alert("Key is : " + name + " and Value is : " + value);
+   }
+}
     });
-    
     </script>
 </head>
 
@@ -70,7 +66,7 @@
     Name:<input type="text" name="name"><br>
     Age:<input type="text" name="age"><br>
     
-    <input type="submit" id="submit" value="Take the challenge">
+    <input type="submit" onclick="setCookie()" value="Take the challenge">
 </form>
 
 <div>
