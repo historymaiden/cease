@@ -10,7 +10,7 @@ def home(request):
 def challenge(request):
     return render(request, "disease/challenge1.html")
 
-def disease(request, pk):
+def disease(request, pk): #I think disease and treatment views should be one view that renders challenge2.html? disease info would go in one div and treatment info in another and do show/hide
     random_id = random.randrange(0,2)
     disease = get_object_or_404(Disease, id=pk)
     intro = get_object_or_404(Disease, id=pk)
