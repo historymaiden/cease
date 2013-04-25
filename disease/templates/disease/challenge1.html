@@ -4,7 +4,33 @@
    
 {% block content %}
 
-
+<script>
+	var name = null;
+	var cookie;
+	var age = 0;
+	var value;
+	$(document).ready(function(){
+        
+          $("#userInfo").validate( {
+            rules: { 
+                name: "required",
+                age: "required",  
+                },
+            messages: {
+                name: "Please enter a name",
+                age: "Please enter an age",
+            }
+          })
+          $('#submit').click(function() {
+          $("#userInfo").valid()
+          console.log($("#name").val())
+          console.log($("#age").val())
+	  name = $("#name").val()
+	  age = $("#age").val()
+	  setCookie(name, age)
+       });
+       });
+</script>
 <body class="challengeModal-iframe-body">
 		<div id="challengeModal1">
         	<div class="row">
@@ -46,7 +72,7 @@
             <div class="row">
                 <div class="challengeModal-text">
                     <p>Please enter your name and age in the boxes below:</p>
-                    <form>
+                    <form id="userInfo" onsubmit="validateForm()">
                       <div class="row">
                         <div class="small-10">
                           <div class="row">
@@ -54,7 +80,7 @@
                               <label for="right-label" class="right inline">Name:</label>
                             </div>
                             <div class="small-9 columns challengeModal-input">
-                              <input type="text" name="name" id="right-label" placeholder="Your name">
+                              <input type="text" name="name" class="right-label" id="name" required="required" placeholder="Your name">
                             </div>
                           </div>
                           <div class="row">
@@ -62,20 +88,21 @@
                               <label for="right-label" class="right inline">Age:</label>
                             </div>
                             <div class="small-5 columns challengeModal-input">
-                              <input type="text" name="age" id="right-label" placeholder="Your age">
+                              <input type="text" name="age" class="right-label" id="age" required="required" placeholder="Your age">
                             </div>
                           </div>
                         </div>
                       </div>
                     </form>
-                    <p>To begin the decision-making process, you will be randomly assigned one of four major
+                    <p>To begin the decision-making process, you will be randomly assigned one of three major
 		    terminal illnesses in the United States. Click the next button to continue.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="challengeModal-next">
-   <!--what should the href be? Need to add cookie function here-->
-                    <a href="/disease/1/" target="challenge1" id="submit"> 
+   <!--what should the href be? Need to add cookie function and validate function here-->
+   <!--right now the validate function isn't running b/c of the href. Where does the function get called for this button?-->
+                    <a href="javascript:void(0);" target="challenge1" id="submit"> 
 			<img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
                     <p><strong>Next ></strong></p></a>
                 </div>
@@ -87,31 +114,17 @@
 
 		  <script>
 		  $(document).ready(function(){
+			//console.log("document ready");
 		  $('#challengeModal-begin-link').click(function(){
 			  $("#challengeModal1").fadeOut(200);
 			  $("#challengeModal2").delay(200).fadeIn(200);
 		  });
-	  });
+	 });
+	  
   </script>
   <script>
-  	var name = null;
-	var cookie;
-	var age = 0;
-	var value;
-	$("#submit").click(function() {
-		$("#userInfo").validate({ 
-		  rules: { 
-		      name: "required",
-		      age: "required",  
-		  },
-		  submitHandler: function(form) {
-	 // some other code
-	 // maybe disabling submit button
-	 // then:
-	    setCookie(name, age) //for calc, change age to years
-		  } 
-	    });
-	  });
+  	
+		  
 	function setCookie(name,age){   //for calc change age to 'years'
 	//collect the cookie for Name and Age fields
 	  $.cookie("eol_challengeName", name , { expires: 1,  path: '/' }); //how do we have the expiration be anytime they return to the start of the challenge?
@@ -120,8 +133,10 @@
 	  $.cookie("eol_challengeAge", years, { expires: 1,  path: '/' });
 	  //alert($.cookie("eol_challengeName" + "eol_challengeAge"));
 	  //print the data in the console
-	  //console.log($.cookie('eol_challengeName'));
-	  
+	  console.log($.cookie('eol_challengeName'));
+		console.log($.cookie('eol_challengeAge'));
+	//jquery load html = /disease
+	window.open("/disease")
 	  };
   	
   </script>

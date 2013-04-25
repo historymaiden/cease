@@ -11,11 +11,9 @@
 		 setTimeout(function(){
 			 $("#challengeModal").foundation('reveal', 'open');
 			}, 1000);
-		$("#heartTimeline").setSize(	
-		$("#heartTimeline: parent").width()
-				);
+		//$("#heartTimeline").setSize($("#heartTimeline:parent").width());
 				
 		buildCharts();
 
-
+	
 	});

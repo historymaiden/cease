@@ -7,7 +7,7 @@ class Disease (models.Model):
     intro = models.CharField(max_length=200, blank=True)
     background = models.CharField(max_length=600, blank=True)
     image = models.CharField(max_length=100)
-    #how to address one disease has 2 treatments?
+    
     class Meta(object):
         ordering = ('disease', 'pk')
     
@@ -16,7 +16,7 @@ class Disease (models.Model):
 
 class Treatments (models.Model):
     scenario = models.CharField(max_length=5000)
-    disease = models.ManyToManyField("Disease") #I think this should be a ManyToOneField? One disease has many treatments
+    disease = models.ManyToManyField("Disease") 
     lifeExpectancy = models.CharField(max_length=200)
     treatment = models.CharField(max_length=5000)
     lifeExtension = models.CharField(max_length=200, blank=True)

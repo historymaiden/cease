@@ -4,44 +4,40 @@
 <head>
     <title>Cookies</title>
     <!--<link rel="stylesheet" href="styles.css" type="text/css">  -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     
     
     <script>
-    var name = null;
-    var cookie;
+       $(document).ready(function(){
+        
+          $("#userInfo").validate( {
+            rules: { 
+                name: "required",
+                age: "required",  
+                },
+            messages: {
+                name: "Please enter a name",
+                age: "Please enter an age",
+            }
+          })
+          $('#submit').click(function() {
+          $("#userInfo").valid()
+          console.log($("#name").val())
+          console.log($("#age").val())
+       });
+       });
+          
+       
+    
+    /*var cookie;
     var age = 0;
     var value;
-    $(document).ready(function(){
-        $("#submit").click(function() {
-            $("#userInfo").validate({ 
-                rules: { 
-                    name: "required",
-                    age: "required",  
-                },
-                submitHandler: function(form) {
-   // some other code
-   // maybe disabling submit button
-   // then:
-             setCookie() //for calc, change age to years
- } 
-          
-            });
-            
-        });
-        
-    function setCookie() {
-        cookievalue= escape(document.input.name.value) + ";";
-        document.cookie = "eol_challengeName=" + name;
-        console.log(name);
-        alert("setting cookies : " + "name=" + name);
-        readCookie();
-    }
+   
     
-    function ReadCookie()
+   function ReadCookie()
 {
    var allcookies = document.cookie;
    alert("All Cookies : " + allcookies );
@@ -56,22 +52,19 @@
       alert("Key is : " + name + " and Value is : " + value);
    }
 }
-    });
-    </script>
+    });*/
+</script>
 </head>
 
 <body>
 
-<form name="input" action="" id="userInfo" method="post">
-    Name:<input type="text" name="name"><br>
-    Age:<input type="text" name="age"><br>
+<form name="input" id="userInfo">
+    Name:<input type="text" name="name" required="required" id="name"><br>
+    Age:<input type="text" name="age" required="required" id="age"><br>
     
-    <input type="submit" onclick="setCookie()" value="Take the challenge">
+    <a href="#" id="submit">Submit ></a>
+    <!--<input type="button" value="Submit" id="submit"> -->
 </form>
-
-<div>
-    <p></p>    
-</div>
 
 
 </body>
