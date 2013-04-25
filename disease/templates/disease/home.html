@@ -7,7 +7,8 @@
 <!--"header" below-->
 <div class="row">
     <div class="large-12 columns topArea">
-        <img src="img/heartbeatWhiteLogo.png" alt="heartbeat logo" />
+	<!--I don't see this image in the img folder-->
+        <img src="{{ STATIC_URL }}img/heartbeatWhiteLogo.png" alt="heartbeat logo" />
     </div>
 </div>
 <div class="row">
@@ -15,9 +16,14 @@
 	<!--"take the challenge" box-->
 		<div id="challengeQuestion">
 			<p>
-			Even with the advances of modern medicine, many patients fighting chronic disease die despite undergoing treatment. Cease asks you to put yourself in the shoes of a patient reaching the end stages of care and decide what matters most to you. Would you seek further treatment or try to maintain a higher quality of life?</p>
+			Even with the advances of modern medicine, many patients fighting chronic disease die
+			despite undergoing treatment. Cease asks you to put yourself in the shoes of a patient
+			reaching the end stages of care and decide what matters most to you. Would you seek
+			further treatment or try to maintain a higher quality of life?</p>
 			<div id="challengeButton">
-			<a href="#" data-reveal-id="challengeModal"><img src="img/takeChallengeBtn.png"></a>
+			<a href="#" data-reveal-id="challengeModal">
+				<!--I don't see this image in the img folder -->
+				<img src="{{ STATIC_URL }}img/takeChallengeBtn.png"></a>
 			</div>
 	
       </div> 
@@ -179,7 +185,11 @@
               <div class="row">
 			<div class="large-12 columns">
 				<div id="pancreaticDeaths"  style="width:100%;margin: 0 auto;max-width:938px"></div>
-				<p>Currenctly, pancreatic cancer is the fourth deadliest cancer in the United States. Since it has no symptoms and is hard to diagnose early, most patients have already entered advanced stages by the time their cancer is found. As the chart above shows, this means that a majority of people diagnosed with pancreatic cancer die from it.</p></p>
+				<p>Currenctly, pancreatic cancer is the fourth deadliest cancer in the United
+				States. Since it has no symptoms and is hard to diagnose early, most patients
+				have already entered advanced stages by the time their cancer is found. As the
+				chart above shows, this means that a majority of people diagnosed with pancreatic
+				cancer die from it.</p></p>
 			</div>
 			<!--end 12-->
 		</div>
@@ -187,13 +197,17 @@
              <div class="row">
             		<div class="large-6 columns">
                 		<div id="pancreaticStages" style="width:100%;margin: 0 auto;max-width:454px"></div>
-				<p>The American Cancer Society estimates that about 38,460 people will die froms pancreatic cancer in the U.S. in 2013.
-But as the chart above shows, these diagnoses will not affect all demographics equally. Female patients tend to have better survival rates when the cancer is found early.</p>
+				<p>The American Cancer Society estimates that about 38,460 people will die from
+				pancreatic cancer in the U.S. in 2013. But as the chart above shows, these
+				diagnoses will not affect all demographics equally. Female patients tend to have
+				better survival rates when the cancer is found early.</p>
                     </div>
                  	<!--end 6-->
                     <div class="large-6 columns">
                 		<div id="pancreaticPrevalence" style="width:100%;margin: 0 auto;max-width:454px"></div>
-				<p>The American Cancer Society estimates that about 45,220 people will be diagnosed with pancreatic cancer in the U.S. in 2013. As the chart above shows, pancreatic cancer is more prominent in white patients.</p>
+				<p>The American Cancer Society estimates that about 45,220 people will be
+				diagnosed with pancreatic cancer in the U.S. in 2013. As the chart above shows,
+				pancreatic cancer is more prominent in white patients.</p>
                     </div>
              </div>
              <!--end row-->
@@ -204,7 +218,8 @@ But as the chart above shows, these diagnoses will not affect all demographics e
             <div class="content" data-section-content>
               <p>We'd like to give a special thanks to <a href="http://www.unckidneycenter.org/about/hladik.html">Gerald Hladik,</a>
                 <a href="http://findadoc.unchealthcare.org/directory/profile.asp?dbase=main&setsize=5&pict_id=0000372">Carla Sueta</a> and
-                <a href="http://www.nccancerhospital.org/members/stephen-a.-bernard">Stephen Bernard,</a> three UNC doctors whose expertise helped us create this project.</p>
+                <a href="http://www.nccancerhospital.org/members/stephen-a.-bernard">Stephen Bernard,</a> three
+		UNC doctors whose expertise helped us create this project.</p>
                 
                 
                 <br>
@@ -252,23 +267,7 @@ But as the chart above shows, these diagnoses will not affect all demographics e
     	<iframe seamless scrolling="no" src="/challenge" name="challenge1" id="challenge1"></iframe>
 </div>
 
-  <script>
-  document.write('<script src=' +
-  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-  '.js><\/script>')
-  </script>
-  
-  <script src="js/foundation.min.js"></script>
-  <script src="js/foundation/foundation.section.js"></script>
-  <script src="js/vendor/custom.modernizr.js"></script>
-  <!--highcharts import below-->
-	<script src="js/Highcharts-3.0.1/js/highcharts.js"></script>
-	<script src="js/cease-highcharts.js"></script>
 
- <script>
-   $(document).foundation();
-  
-</script>
 
 {% endblock %}
 

@@ -9,64 +9,84 @@
     		<div class="row">
                     <div class="challengeModal-logo">
                     	<h2>cease.</h2>
-                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"  class="hide-for-small"
+			     alt="border"/>
                     </div>
             </div>
             <div class="row">
                 <div class="challengeModal-text">
                 	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
-                        {% if random %}
-			<p>cookie('eol_challengeName')[Name], in cookie('eol_challengeAge')[Years to 65] from now, you are diagnosed with {{ disease.disease }}.<br><br>
-			{{ disease.intro }}<br><br>
+			<p>[Name], in [years] years from now, you are diagnosed with {{ disease.random.disease }}.<br><br>
+			{{ random }} <!-- this needs fixing -->
+			{{ disease.random.intro }}<br><br>
                         {{ disease.background }}<br><br>
                         <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
-                        {% else %}
-                        <p>Oops! We've encountered a problem. Click <a href="#">here</a> to return to the main site.</p>
-			{% endif %}
+                       
                     </div>                    
                 </div>
             </div>
             <div class="row">
                 <div class="challengeModal-next">
-                    <a id="challengeModal-next-link1" href="#"><img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
+                    <a id="challengeModal-next-link1" href="#">
+			<img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
                     <p><strong>Next ></strong></p></a>
                 </div>
-                <p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
+                <p class="challengeModal-skip"><a class="challengeModal-skip-link"
+			onclick="parent.closeModal()">Skip to the main site.</a></p>
             </div>
     </div>
     <!--end challengeModal3-->
+    
+    <!-- begin treatment options -->
     <div id="challengeModal4" style="display:none;">
     		<div class="row">
             	<div class="twelve columns">
                     <div class="challengeModal-logo">
                     	<h2>cease.</h2>
-                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"  class="hide-for-small" alt="border"/>
+                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"
+			     class="hide-for-small" alt="border"/>
                     </div>
                  </div>
             </div>
             <div class="row">
-                <div class="challengeModal-text">
-                	<p>Having stage IV pancreatic cancer means the disease has spread to distant organs in your body and cannot be cured by surgery. At this point, your doctor has said you have around [six months to one year] left to live. Your main options are: </p>
-                    <div id="treatment-option1">
-                        <p>[Get chemotherapy], which uses drugs to treat your cancer. Most people with pancreatic cancer choose to 
-                        receive chemotherapy. For these patients, the chemo is normally given by vein during weekly appointments. 
-                        Depending on the severity of your cancer, chemo will likely extend your life by about [three to six months.]  
+                <div class="challengeModal-text"> <!-- I think the treatments need another ID type field-->
+                	<p>{{ disease.scenario }}Having stage IV pancreatic cancer means the disease has spread
+			to distant organs in your body and cannot be cured by surgery. At this point, your
+			doctor has said you have around six months to one year left to live. Your main options are: </p>
+                    
+		    <div id="treatment-option1"> <!--some of this text doesn't match the db, what needs to stay? the rest needs to go-->
+                        <p>{{ treatment 1 according to random disease}}Get [chemotherapy], which uses drugs to treat your cancer. Most
+			people with pancreatic cancer choose to receive chemotherapy. For
+			these patients, the chemo is normally given by vein during weekly appointments. Depending
+			on the severity of your [cancer], chemo will likely extend your life by about
+			[three to six months].  
                         </p>
                     </div>
-                    <div id="treatment-option2">
-                        <p>[Enter Hospice], a government program that attempts to help you live the rest of your life 
-                        as comfortably as possible. Entering Hospice care requires stopping active treatment. 
-                        To receive the Hospice Medicare Benefit, a doctor must certify that you have about six months or less left to live.
+                    <div id="treatment-option2"> <!-- need to remove text and just use field template -->
+                        <p>{{ treatment 2 according to random disease }}Enter [Hospice], a government program that attempts to help you
+			live the rest of your life as comfortably as possible. Entering [Hospice] care requires
+			stopping active treatment. To receive the Hospice Medicare Benefit, a doctor must
+			certify that you have about six months or less left to live.
                         </p>
-                    </div>
+                    </div> 
                 </div>
              </div>
              <div class="row">
-               
+               <form class="custom"> <!--displays radio button for user to select treatment choice -->
+		<label for="radio1" type="radio" id="radio1" style="display:none">
+			<input name="radio1" type="radio" id="radio1" style="display:none">
+				<span class="custom radio"></span> Choose Option 1
+		</label>
+		<label for="radio2">
+			<input name="radio2" type="radio" id="radio2" style="display:none">
+				<span class="custom radio"></span>Choose Option 2
+		</label>
+	       </form>
             </div>
             <div class="row">
                 <div class="challengeModal-next">
-                    <a href="#" id="challengeModal-next-link2"><img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
+                    <a href="#" id="challengeModal-next-link2">
+			<img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
                     <p><strong>Next ></strong></p></a>
                 </div>
             	<p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
@@ -77,16 +97,20 @@
     		<div class="row">
             	<div id="challengeModal-results-text">
                   		<h3>your treatment results</h3>
-                        <p> By choosing not to pursue chemotherapy, you remain on a life expectancy trajectory of about six to 12 months. 
+			<!--the following paragraph needs to be dynamic according to the option user chooses from
+			previous screen. Is the following ok to replace with field template? -->
+                        <p> {{ treatment.choice }}By choosing not to pursue chemotherapy, you remain on a life expectancy trajectory of about six to 12 months. 
                         In your remaining time, your treatment will be focused on symptom relief and pain management. 
                         Many patients who choose this option do so because they believe it offers a higher quality of life 
                         and allows them to die in their own home. In most cases, Hospice nurses provide symptom management 
                         and emotional support to patients and caretakers.</p>
-                        <p><strong>Estimated cost:</strong> If you are currently on Medicare, you can receive Hospice care for free.</p>
-                        <p><strong>Doctor visits:</strong> In most cases, Hospice nurses will come care for you in your home during weekly appointments.</p>
+			<!-- remove excess text in the following: -->
+                        <p><strong>Estimated cost:</strong> {{ treatment.cost }}If you are currently on Medicare, you can receive Hospice care for free.</p>
+                        <p><strong>Doctor visits:</strong> {{ treatment.doctorVisits }}In most cases, Hospice nurses will come care for you in your home during weekly appointments.</p>
                   </div>
                   <img class="challengeModal-line-vertical" class="hide-for-small" src="img/charcoal-line-vertical.png"/>
                   <div id="challengeModal-results-lifespan">
+			<!-- where is the following prediction coming from? This should be in the db -->
                   		<h3>6</h3>
                         <p>months added to life</p>
                   </div>
@@ -94,26 +118,24 @@
             
             <div class="row">
                 <div class="challengeModal-next">
-                    <a id="challengeModal-next-link3" onclick="parent.closeModal()"><img src="img/button-big-blue-dark.png" alt="button"/>
+                    <a id="challengeModal-next-link3" onclick="parent.closeModal()">
+			<img src="{{ STATIC_URL }}img/button-big-blue-dark.png" alt="button"/>
                     <p><strong>Learn more about end stage care ></strong></p></a>
                 </div>
             	<div id="challengeModal-restart">
-                	<a href="#" id="cllangeModal-restart-link"><img src="img/button-big-blue-light.png" alt="button"/>
+                	<a href="/challenge" id="challengeModal-restart-link">
+				<img src="{{ STATIC_URL }}img/button-big-blue-light.png" alt="button"/>
                     <p><strong>< Try again</strong></p></a>
                 </div>
             </div>
             <div class="row">
-            	<img class="challengeModal-border" src="img/heartbeat-border-bottom.png" alt="border"/>
+            	<img class="challengeModal-border" src="{{ STATIC_URL }}img/heartbeat-border-bottom.png" alt="border"/>
             </div>
     </div>
     <!--end challengeModal5-->
-    <script>
-  document.write('<script src=' +
-  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-  '.js><\/script>')
-  </script>
-  <script src="js/foundation.min.js"></script>
-  <script>
+    
+    <!--can the remaining scripts be put into base.py or another js file or do they need to stay in this template?-->
+  <script> 
   $(document).ready(function(){
 	  $('#challengeModal-next-link1').click(function(){
 		  $("#challengeModal3").fadeOut(200);

@@ -5,7 +5,7 @@
         "fields": {
             "scenario": "Having stage IV pancreatic cancer means the disease has spread to distant organs in your body and cannot be cured by surgery.", 
             "lifeExpectancy": "six months to one year",
-            "treatment": "Get chemotherapy, which uses drugs to treat your cancer. Most people with pancreatic cancer choose to receive chemotherapy. For these patients, the chemo is normally given by vein during weekly appointments.",
+            "treatment": "Get chemotherapy, which uses drugs to treat your cancer. Most people with pancreatic cancer choose to receive chemotherapy. For these patients, the chemo is normally given intravenously during weekly appointments.",
             "lifeExtension": "three to six months", 
             "choice": "By selecting to treat your cancer with chemotherapy, you've added about three to six months to your original life expectancy, meaning you now have approximately nine to 18 months left to live. Side effects from chemotherapy vary by patient, but they can include an increased likelihood to contract infection, hair loss, weight loss, nausea and vomiting, diarrhea and mouth sores. Most side effects stop when treatment ends.", 
             "cost": "$49,000",
