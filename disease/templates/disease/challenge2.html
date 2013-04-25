@@ -15,9 +15,12 @@
             </div>
             <div class="row">
                 <div class="challengeModal-text">
-                	<div id="challengeModal-diagnosis"> <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->
-			<p>[Name], in [years] years from now, you are diagnosed with {{ disease.random.disease }}.<br><br>
-			{{ random }} <!-- this needs fixing -->
+<!--how to call cookies http://www.quirksmode.org/js/cookies.html-->                
+                	<div id="challengeModal-diagnosis"> 
+        <!--need to figure out correct syntax for the following to show data according to the random id selected -->
+			<p>[insert cookie Name], in [insert cookie years] years from now, you are diagnosed with 
+			{{ disease.random.disease }}.<br><br>
+			{{ random }} 
 			{{ disease.random.intro }}<br><br>
                         {{ disease.background }}<br><br>
                         <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
@@ -49,12 +52,14 @@
                  </div>
             </div>
             <div class="row">
-                <div class="challengeModal-text"> <!-- I think the treatments need another ID type field-->
+                <div class="challengeModal-text"> 
+   <!-- I think the treatments need another ID type field-->
                 	<p>{{ disease.scenario }}Having stage IV pancreatic cancer means the disease has spread
 			to distant organs in your body and cannot be cured by surgery. At this point, your
 			doctor has said you have around six months to one year left to live. Your main options are: </p>
                     
-		    <div id="treatment-option1"> <!--some of this text doesn't match the db, what needs to stay? the rest needs to go-->
+		    <div id="treatment-option1"> 
+<!--some of this text doesn't match the db, what needs to stay? the rest needs to go-->
                         <p>{{ treatment 1 according to random disease}}Get [chemotherapy], which uses drugs to treat your cancer. Most
 			people with pancreatic cancer choose to receive chemotherapy. For
 			these patients, the chemo is normally given by vein during weekly appointments. Depending
@@ -62,7 +67,8 @@
 			[three to six months].  
                         </p>
                     </div>
-                    <div id="treatment-option2"> <!-- need to remove text and just use field template -->
+                    <div id="treatment-option2"> 
+  <!-- need to remove text and just use field template -->
                         <p>{{ treatment 2 according to random disease }}Enter [Hospice], a government program that attempts to help you
 			live the rest of your life as comfortably as possible. Entering [Hospice] care requires
 			stopping active treatment. To receive the Hospice Medicare Benefit, a doctor must
@@ -72,7 +78,7 @@
                 </div>
              </div>
              <div class="row">
-               <form class="custom"> <!--displays radio button for user to select treatment choice -->
+               <form class="custom">  <!--displays radio button for user to select treatment choice -->
 		<label for="radio1" type="radio" id="radio1" style="display:none">
 			<input name="radio1" type="radio" id="radio1" style="display:none">
 				<span class="custom radio"></span> Choose Option 1
