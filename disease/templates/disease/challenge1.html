@@ -9,6 +9,7 @@
 	var cookie;
 	var age = 0;
 	var value;
+	var randomnum;
 	$(document).ready(function(){
         
           $("#userInfo").validate( {
@@ -23,10 +24,12 @@
           })
           $('#submit').click(function() {
           $("#userInfo").valid()
-          console.log($("#name").val())
-          console.log($("#age").val())
-	  name = $("#name").val()
-	  age = $("#age").val()
+		console.log($("#name").val())
+		console.log($("#age").val())
+		name = $("#name").val()
+		age = $("#age").val()
+		randomnum = Math.floor(Math.random()*2)
+		console.log("randomnum" + randomnum);
 	  setCookie(name, age)
        });
        });
@@ -72,7 +75,7 @@
             <div class="row">
                 <div class="challengeModal-text">
                     <p>Please enter your name and age in the boxes below:</p>
-                    <form id="userInfo" onsubmit="validateForm()">
+                    <form id="userInfo">
                       <div class="row">
                         <div class="small-10">
                           <div class="row">
@@ -80,7 +83,7 @@
                               <label for="right-label" class="right inline">Name:</label>
                             </div>
                             <div class="small-9 columns challengeModal-input">
-                              <input type="text" name="name" class="right-label" id="name" required="required" placeholder="Your name">
+                              <input type="text" name="name" class="right-label" value="molly" id="name" required="required" placeholder="Your name">
                             </div>
                           </div>
                           <div class="row">
@@ -88,7 +91,7 @@
                               <label for="right-label" class="right inline">Age:</label>
                             </div>
                             <div class="small-5 columns challengeModal-input">
-                              <input type="text" name="age" class="right-label" id="age" required="required" placeholder="Your age">
+                              <input type="text" name="age" class="right-label" id="age" value="12" required="required" placeholder="Your age">
                             </div>
                           </div>
                         </div>
@@ -102,9 +105,9 @@
                 <div class="challengeModal-next">
    <!--what should the href be? Need to add cookie function and validate function here-->
    <!--right now the validate function isn't running b/c of the href. Where does the function get called for this button?-->
-                    <a href="javascript:void(0);" target="challenge1" id="submit"> 
-			<img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
-                    <p><strong>Next ></strong></p></a>
+                   <script>randomnum = Math.floor(Math.random()*3)+1
+			console.log("randomnum" + randomnum);
+			document.write('<a href="../disease/' + randomnum + '" target="challenge1" id="submit"><img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/><p><strong>Next ></strong></p></a>')</script>
                 </div>
             	<p class="challengeModal-skip">
 		   <a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
@@ -122,22 +125,18 @@
 	 });
 	  
   </script>
-  <script>
-  	
-		  
+  <script>	  
 	function setCookie(name,age){   //for calc change age to 'years'
 	//collect the cookie for Name and Age fields
-	  $.cookie("eol_challengeName", name , { expires: 1,  path: '/' }); //how do we have the expiration be anytime they return to the start of the challenge?
-	  cookie = parseInt($.cookie('eol_challengeAge')); //do we need this line?
-	  var years = 65 - age; //calcs the years
-	  $.cookie("eol_challengeAge", years, { expires: 1,  path: '/' });
-	  //alert($.cookie("eol_challengeName" + "eol_challengeAge"));
-	  //print the data in the console
-	  console.log($.cookie('eol_challengeName'));
+		$.cookie("eol_challengeName", name , { expires: 1,  path: '/' }); //how do we have the expiration be anytime they return to the start of the challenge?
+		cookie = parseInt($.cookie('eol_challengeAge')); //do we need this line?
+		var years = 65 - age; //calcs the years
+		$.cookie("eol_challengeAge", years, { expires: 1,  path: '/' });
+		console.log($.cookie('eol_challengeName'));
 		console.log($.cookie('eol_challengeAge'));
-	//jquery load html = /disease
-	window.open("/disease")
-	  };
+		//window.open("/disease/2");
+		
+	};
   	
   </script>
 

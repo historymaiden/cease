@@ -7,9 +7,10 @@ from disease import views
 urlpatterns = patterns('',
     url(r'^$', views.home, name='disease_home'),
     
-    url(r'^challenge/', 'disease.views.challenge', name='disease_home'), #the template challenge1.html will now show in the iframe
+    url(r'^challenge/', 'disease.views.challenge', name='disease_home'), #the template challenge1.html will
+    #now show in the iframe
     
-    url(r'^disease/(?P<pk>\d+)$', 'disease.views.disease', name='disease_disease'), #I think this and treatment/ below need to be combined into 1 for treatment2.html?
+    url(r'^disease/(?P<pk>\d+)$', 'disease.views.disease', name='disease_disease'), 
     
    # url(r'^treatment/(?P<pk>\d+)$', 'disease.views.treatment', name='disease_treatment'),
      

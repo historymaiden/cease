@@ -18,10 +18,9 @@
 <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->                
                 	<div id="challengeModal-diagnosis"> 
         <!--need to figure out correct syntax for the following to show data according to the random id selected -->
-			<p>[insert cookie Name], in [insert cookie years] years from now, you are diagnosed with 
-			{{ disease.random.disease }}.<br><br>
-			{{ random }} 
-			{{ disease.random.intro }}<br><br>
+			<p><script>$.cookie("eol_challengeName",  { path: '/' });</script>, in $.cookie("eol_challengeAge",  { path: '/' }); years from now, you are diagnosed with 
+			{{ disease.disease }}.<br><br>
+			{{ disease.intro }}<br><br>
                         {{ disease.background }}<br><br>
                         <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
                        
@@ -53,17 +52,15 @@
             </div>
             <div class="row">
                 <div class="challengeModal-text"> 
-   <!-- I think the treatments need another ID type field-->
-                	<p>{{ Treatments.scenario }}At this point, your
-			doctor has said you have around {{ Treatments.lifeExpectancy }} left to live.
+                	<p>{{ disease.scenario }}At this point, your
+			doctor has said you have around {{ disease.lifeExpectancy }} left to live.
 			Your main options are: </p>
                     
 		    <div id="treatment-option1"> 
-                        <p>{{ treatment 1 according to random disease}}</p>
+                       <p> {{disease.treatment }}</p>
                     </div>
                     <div id="treatment-option2"> 
-  
-                        <p>{{ treatment 2 according to random disease }}</p>
+			<p> {{ disease.treatment }}</p>
                     </div> 
                 </div>
              </div>
@@ -94,13 +91,13 @@
             	<div id="challengeModal-results-text">
                   		<h3>your treatment results</h3>
 			
-                        <p> {{ treatment.choice }}</p>
-                        <p><strong>Estimated cost:</strong> {{ treatment.cost }}</p>
-                        <p><strong>Doctor visits:</strong> {{ treatment.doctorVisits }}</p>
+                        <p> {{ disease.choice }}</p>
+                        <p><strong>Estimated cost:</strong> {{ disease.cost }}</p>
+                        <p><strong>Doctor visits:</strong> {{ disease.docVisits }}</p>
                   </div>
                   <img class="challengeModal-line-vertical" class="hide-for-small" src="img/charcoal-line-vertical.png"/>
                   <div id="challengeModal-results-lifespan">
-                  	<h3>{{ Treatments.lifeExtension }}</h3>
+                  	<h3>{{ disease.lifeExtension }}</h3>
                         <p>months added to life</p>
                   </div>
             </div>
