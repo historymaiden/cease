@@ -19,12 +19,11 @@
                         <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"  class="hide-for-small"
 			     alt="border"/>
                     </div>
-            </div>
-            <div class="row">
+		</div>
+		
+		<div class="row">
                 <div class="challengeModal-text">
-<!--how to call cookies http://www.quirksmode.org/js/cookies.html-->                
                 	<div id="challengeModal-diagnosis"> 
-        <!--need to figure out correct syntax for the following to show data according to the random id selected -->
 			<p><script>readCookies();</script>
 			you are diagnosed with 
 			{{ disease.disease }}.<br><br>
@@ -33,10 +32,10 @@
 			</p>
                         <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
                        
-                    </div>                    
+			</div>                    
                 </div>
-            </div>
-            <div class="row">
+		</div>
+	        <div class="row">
                 <div class="challengeModal-next">
                     <a id="challengeModal-next-link1" href="#">
 			<img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
@@ -44,85 +43,82 @@
                 </div>
                 <p class="challengeModal-skip"><a class="challengeModal-skip-link"
 			onclick="parent.closeModal()">Skip to the main site.</a></p>
-            </div>
-    </div>
+		</div>
+	</div>
     <!--end challengeModal3-->
     
     <!-- begin treatment options -->
-    <div id="challengeModal4" style="display:none;">
+	<div id="challengeModal4" style="display:none;">
     		<div class="row">
-            	<div class="twelve columns">
-                    <div class="challengeModal-logo">
-                    	<h2>cease.</h2>
-                        <img src="{{ STATIC_URL }}img/heartbeat-border-top.png"
-			     class="hide-for-small" alt="border"/>
-                    </div>
-                 </div>
-            </div>
-            <div class="row">
+			<div class="twelve columns">
+			    <div class="challengeModal-logo">
+				<h2>cease.</h2>
+				<img src="{{ STATIC_URL }}img/heartbeat-border-top.png"
+				     class="hide-for-small" alt="border"/>
+			    </div>
+			</div>
+		</div>
 		
-                <div class="challengeModal-text">
-			
-                	<p>{{ treatment1.scenario }} At this point, your
+		<div class="row">
+		<div class="challengeModal-text">
+			<p>{{ treatment1.scenario }} At this point, your
 			doctor has said you have around {{ treatment1.lifeExpectancy }} left to live.
 			Your main options are: </p>
-                    
-		    <div id="treatment-option1">
-                       <p> {{ treatment1 }}</p>
-                    </div>
-                    <div id="treatment-option2">
-			<p> {{ treatment2 }}</p>
-                    </div>
-		  
-                </div>
-             </div>
-             <div class="row">
-               <form class="custom">  <!--displays radio button for user to select treatment choice -->
-			<input name="radio1" type="radio" class="custom radio" id="radio1" value="treatment1">Choose Option 1
-			<input name="radio2" type="radio" class="custom radio" id="radio2" value="treatment2">Choose Option 2
-	       </form>
-            </div>
-            <div class="row">
+			<div id="treatment-option1">
+			   <p> {{ treatment1 }}</p>
+			</div>
+			<div id="treatment-option2">
+			   <p> {{ treatment2 }}</p>
+			</div>
+		</div>
+		</div>
+		
+		<div class="row">
+		<form class="custom">  <!--displays radio button for user to select treatment choice -->
+		   <input name="treatment" type="radio" class="custom radio" id="radio1" value="treatment1">Choose Option 1
+		   <input name="treatment" type="radio" class="custom radio" id="radio2" value="treatment2">Choose Option 2
+		</form>
+		</div>
+		
+		<div class="row">
                 <div class="challengeModal-next">
                     <a href="#" id="challengeModal-next-link2">
 			<img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/>
                     <p><strong>Next ></strong></p></a>
                 </div>
             	<p class="challengeModal-skip"><a class="challengeModal-skip-link" onclick="parent.closeModal()">Skip to the main site.</a></p>
-            </div>
-    </div>
+		</div>
+	</div>
     <!--end challengeModal4-->
     <div id="challengeModal5" style="display:none;">
-    	<div class="row">
-		
-            	{% if treatment1 %}
-		  <div id="challengeModal-results-text">
+    	<div id="t1" class="row"style="display:none;">
+		<div id="challengeModal-results-text">
                   	<h3>your treatment results</h3>
                         <p> {{ treatment1.choice }}</p>
                         <p><strong>Estimated cost:</strong> {{ treatment1.cost }}</p>
                         <p><strong>Doctor visits:</strong> {{ treatment1.doctorVisits }}</p>
-                  </div>
-                  <img class="challengeModal-line-vertical" class="hide-for-small" src="{{ STATIC_URL }}img/charcoal-line-vertical.png"/>
-                  <div id="challengeModal-results-lifespan">
+                </div>
+                <img class="challengeModal-line-vertical" class="hide-for-small" src="{{ STATIC_URL }}img/charcoal-line-vertical.png"/>
+                <div id="challengeModal-results-lifespan">
                   	<h3>{{ treatment1.lifeExtension }}</h3>
                         <p>added to life</p>
-                  </div>
-		{% else %}
-			<div id="challengeModal-results-text">
+                </div>
+	</div>
+	<div id="t2" class="row" style="display:none;">
+		<div id="challengeModal-results-text">
                   	<h3>your treatment results</h3>
                         <p> {{ treatment2.choice }}</p>
                         <p><strong>Estimated cost:</strong> {{ treatment2.cost }}</p>
                         <p><strong>Doctor visits:</strong> {{ treatment2.doctorVisits }}</p>
-                  </div>
-                  <img class="challengeModal-line-vertical" class="hide-for-small" src="{{ STATIC_URL }}img/charcoal-line-vertical.png"/>
-                  <div id="challengeModal-results-lifespan">
+                </div>
+                <img class="challengeModal-line-vertical" class="hide-for-small" src="{{ STATIC_URL }}img/charcoal-line-vertical.png"/>
+                <div id="challengeModal-results-lifespan">
                   	<h3>{{ treatment2.lifeExtension }}</h3>
                         <p>months added to life</p>
-                  </div>
-		{% endif %}
-        </div>
+                </div>
+	</div>
             
-            <div class="row">
+        <div class="row">
                 <div class="challengeModal-next">
                     <a id="challengeModal-next-link3" onclick="parent.closeModal()">
 			<img src="{{ STATIC_URL }}img/button-big-blue-dark.png" alt="button"/>
@@ -133,14 +129,13 @@
 				<img src="{{ STATIC_URL }}img/button-big-blue-light.png" alt="button"/>
                     <p><strong>< Try again</strong></p></a>
                 </div>
-            </div>
-            <div class="row">
+        </div>
+        <div class="row">
             	<img class="challengeModal-border" src="{{ STATIC_URL }}img/heartbeat-border-bottom.png" alt="border"/>
-            </div>
+        </div>
     </div>
     <!--end challengeModal5-->
     
-    <!--can the remaining scripts be put into base.py or another js file or do they need to stay in this template?-->
   <script>
   
   $(document).ready(function(){
@@ -151,9 +146,12 @@
 	  $('#challengeModal-next-link2').click(function(){
 		  $("#challengeModal4").fadeOut(200);
 		  $("#challengeModal5").delay(200).fadeIn(200);
+		  var val = $("input[name='treatment']:checked").val();
+		var selector =  (val == "treatment1") ? "#t1" : "#t2";
+		$(selector).toggle();		
 	  });
-	
-  });
+});
+  
 </script>
 
   <script src="js/foundation/foundation.forms.js"></script>
