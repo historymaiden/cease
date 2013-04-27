@@ -28,8 +28,7 @@
 		console.log($("#age").val())
 		name = $("#name").val()
 		age = $("#age").val()
-		randomnum = Math.floor(Math.random()*2)
-		console.log("randomnum" + randomnum);
+		
 	  setCookie(name, age)
        });
        });
@@ -83,7 +82,7 @@
                               <label for="right-label" class="right inline">Name:</label>
                             </div>
                             <div class="small-9 columns challengeModal-input">
-                              <input type="text" name="name" class="right-label" value="molly" id="name" required="required" placeholder="Your name">
+                              <input type="text" name="name" class="right-label" value="ted" id="name" required="required" placeholder="Your name">
                             </div>
                           </div>
                           <div class="row">
@@ -91,7 +90,7 @@
                               <label for="right-label" class="right inline">Age:</label>
                             </div>
                             <div class="small-5 columns challengeModal-input">
-                              <input type="text" name="age" class="right-label" id="age" value="12" required="required" placeholder="Your age">
+                              <input type="text" name="age" class="right-label" id="age" value="22" required="required" placeholder="Your age">
                             </div>
                           </div>
                         </div>
@@ -103,8 +102,6 @@
             </div>
             <div class="row">
                 <div class="challengeModal-next">
-   <!--what should the href be? Need to add cookie function and validate function here-->
-   <!--right now the validate function isn't running b/c of the href. Where does the function get called for this button?-->
                    <script>randomnum = Math.floor(Math.random()*3)+1
 			console.log("randomnum" + randomnum);
 			document.write('<a href="../disease/' + randomnum + '" target="challenge1" id="submit"><img src="{{ STATIC_URL }}img/button-small-blue-dark.png" alt="button"/><p><strong>Next ></strong></p></a>')</script>

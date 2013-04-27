@@ -12,31 +12,14 @@ def challenge(request):
 
 def disease(request, pk): 
     disease = get_object_or_404(Disease, id=pk)
-    intro = get_object_or_404(Disease, id=pk)
-    background = get_object_or_404(Disease, id=pk)
-    image = get_object_or_404(Disease, id=pk)
-    
-    scenario = get_object_or_404(Treatments, id=pk)
-    lifeExpectancy = get_object_or_404(Treatments, id=pk)
-    treatment = get_object_or_404(Treatments, id=pk)
-    lifeExtension = get_object_or_404(Treatments, id=pk)
-    choice = get_object_or_404(Treatments, id=pk)
-    cost = get_object_or_404(Treatments, id=pk)
-    doctorVisits = get_object_or_404(Treatments, id=pk)
-    
+    ts = disease.treatments_set.all()
+    treatment1 = ts[0]
+    treatment2 = ts[1]
+
     context = {
         'disease': disease,
-        'intro': intro,
-        'background': background,
-        'image': image,
-        
-        'scenario': scenario,
-        'treatment': treatment,
-        'lifeExtension': lifeExtension,
-        'lifeExpectancy': lifeExpectancy,
-        'choice': choice,
-        'cost': cost,
-        'doctorVisits': doctorVisits,
+        'treatment1': treatment1,
+        'treatment2': treatment2,
     }
     return render(request, "disease/challenge2.html", context)
 

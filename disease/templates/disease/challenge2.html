@@ -4,6 +4,19 @@
    
 {% block content %}
 
+<script>
+	function readNameCookie() {
+	console.log(name);
+	alert($.cookie('eol_challengeName'));
+	document.write($.cookie('eol_challengeName') + ", in " + $.cookie('eol_challengeAge') + " years from now, ");
+  }
+	function readAgeCookie() {
+	console.log(age);
+	alert($.cookie('eol_challengeAge'));
+	document.write($.cookie('eol_challengeAge'));
+  }
+	
+</script>
 <body class="challengeModal-iframe-body">
 	<div id="challengeModal3">
     		<div class="row">
@@ -18,10 +31,12 @@
 <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->                
                 	<div id="challengeModal-diagnosis"> 
         <!--need to figure out correct syntax for the following to show data according to the random id selected -->
-			<p><script>$.cookie("eol_challengeName");</script>, in $.cookie("eol_challengeAge",  { path: '/' }); years from now, you are diagnosed with 
+			<script>readNameCookie();</script><p>, in </p><script>readAgeCookie();</script>
+			<p>years from now, you are diagnosed with 
 			{{ disease.disease }}.<br><br>
 			{{ disease.intro }}<br><br>
                         {{ disease.background }}<br><br>
+			</p>
                         <div id="diagnosis-img"><img src="{{ STATIC_URL }}{{ disease.image }}"/></div>
                        
                     </div>                    
@@ -51,29 +66,30 @@
                  </div>
             </div>
             <div class="row">
-                <div class="challengeModal-text"> 
-                	<p>{{ disease.scenario }}At this point, your
-			doctor has said you have around {{ disease.lifeExpectancy }} left to live.
+		
+                <div class="challengeModal-text">
+			
+                	<p>{{ scenario }}At this point, your
+			doctor has said you have around {{ lifeExpectancy }} left to live.
 			Your main options are: </p>
                     
-		    <div id="treatment-option1"> 
-                       <p> {{disease.treatment }}</p>
+		    <div id="treatment-option1">
+			
+                       <p> {{ treatment1 }}</p>
+			
                     </div>
-                    <div id="treatment-option2"> 
-			<p> {{ disease.treatment }}</p>
-                    </div> 
+                    <div id="treatment-option2">
+			<p> {{ treatment2 }}</p>
+			
+			
+                    </div>
+		  
                 </div>
              </div>
              <div class="row">
                <form class="custom">  <!--displays radio button for user to select treatment choice -->
-		<label for="radio1" type="radio" id="radio1" style="display:none">
-			<input name="radio1" type="radio" id="radio1" style="display:none">
-				<span class="custom radio"></span> Choose Option 1
-		</label>
-		<label for="radio2">
-			<input name="radio2" type="radio" id="radio2" style="display:none">
-				<span class="custom radio"></span>Choose Option 2
-		</label>
+			<input name="radio1" type="radio" class="custom radio" id="radio1" value="treatment1">Choose Option 1
+			<input name="radio2" type="radio" class="custom radio" id="radio2" value="treatment2">Choose Option 2
 	       </form>
             </div>
             <div class="row">
@@ -87,20 +103,34 @@
     </div>
     <!--end challengeModal4-->
     <div id="challengeModal5" style="display:none;">
-    		<div class="row">
-            	<div id="challengeModal-results-text">
-                  		<h3>your treatment results</h3>
-			
-                        <p> {{ disease.choice }}</p>
-                        <p><strong>Estimated cost:</strong> {{ disease.cost }}</p>
-                        <p><strong>Doctor visits:</strong> {{ disease.doctorVisits }}</p>
+    	<div class="row">
+		
+            	{% if treatment1 %}
+		  <div id="challengeModal-results-text">
+                  	<h3>your treatment results</h3>
+                        <p> {{ treatment1.choice }}</p>
+                        <p><strong>Estimated cost:</strong> {{ treatment1.cost }}</p>
+                        <p><strong>Doctor visits:</strong> {{ treatment1.doctorVisits }}</p>
                   </div>
-                  <img class="challengeModal-line-vertical" class="hide-for-small" src="img/charcoal-line-vertical.png"/>
+                  <img class="challengeModal-line-vertical" class="hide-for-small" src="{{ STATIC_URL }}img/charcoal-line-vertical.png"/>
                   <div id="challengeModal-results-lifespan">
-                  	<h3>{{ disease.lifeExtension }}</h3>
+                  	<h3>{{ treatment1.lifeExtension }}</h3>
                         <p>months added to life</p>
                   </div>
-            </div>
+		{% else %}
+			<div id="challengeModal-results-text">
+                  	<h3>your treatment results</h3>
+                        <p> {{ treatment2.choice }}</p>
+                        <p><strong>Estimated cost:</strong> {{ treatment2.cost }}</p>
+                        <p><strong>Doctor visits:</strong> {{ treatment2.doctorVisits }}</p>
+                  </div>
+                  <img class="challengeModal-line-vertical" class="hide-for-small" src="{{ STATIC_URL }}img/charcoal-line-vertical.png"/>
+                  <div id="challengeModal-results-lifespan">
+                  	<h3>{{ treatment2.lifeExtension }}</h3>
+                        <p>months added to life</p>
+                  </div>
+		{% endif %}
+        </div>
             
             <div class="row">
                 <div class="challengeModal-next">
@@ -121,7 +151,8 @@
     <!--end challengeModal5-->
     
     <!--can the remaining scripts be put into base.py or another js file or do they need to stay in this template?-->
-  <script> 
+  <script>
+  
   $(document).ready(function(){
 	  $('#challengeModal-next-link1').click(function(){
 		  $("#challengeModal3").fadeOut(200);
