@@ -56,7 +56,7 @@
         "model": "disease.Treatments",
         "fields": {
             "scenario": "Since you have previously had a heart attack and are over 65 years-old, receiving a transplant is not an option for you.", 
-            "lifeExpectancy": "six months or less left to live",
+            "lifeExpectancy": "six months or less",
             "treatment": "Get a left ventricular assist device, which is a mechanical pump that does the work of pumping your blood and is powered by rechargeable batteries. For many patients, this can be a longer-term option.",
             "lifeExtension": "1 to 5 years depending on condition", 
             "choice": "By choosing to get a left ventricular assist device, you have likely lengthened your life span by a few years. Some stipulations accompany this surgery, including not driving or lifting more than 5 pounds for six weeks. Other complications can include stroke and internal bleeding. Patients are also advised not to drink or smoke after receiving an lvad.", 
@@ -69,7 +69,7 @@
         "model": "disease.Treatments",
         "fields": {
             "scenario": "Since you have previously had a heart attack and are over 65 years-old, receiving a transplant is not an option for you.", 
-            "lifeExpectancy": "six months or less left to live",
+            "lifeExpectancy": "six months or less",
             "treatment": "Go on continuous intravenous medication. This measure provides patients with a way to live more comfortably at home, but it will most likely not prolong life.",
             "lifeExtension": "minimal", 
             "choice": "Going on continuous intravenous medication is an option that helps patients feel better but not live longer. These medications are often paired with other palliative care measures depending on the patient's wishers. This is seen as an option for someone who does not want to or physically cannot undergo the surgery to receive an assist device.", 
