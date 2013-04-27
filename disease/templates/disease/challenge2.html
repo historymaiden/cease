@@ -18,7 +18,7 @@
 <!--how to call cookies http://www.quirksmode.org/js/cookies.html-->                
                 	<div id="challengeModal-diagnosis"> 
         <!--need to figure out correct syntax for the following to show data according to the random id selected -->
-			<p><script>$.cookie("eol_challengeName",  { path: '/' });</script>, in $.cookie("eol_challengeAge",  { path: '/' }); years from now, you are diagnosed with 
+			<p><script>$.cookie("eol_challengeName");</script>, in $.cookie("eol_challengeAge",  { path: '/' }); years from now, you are diagnosed with 
 			{{ disease.disease }}.<br><br>
 			{{ disease.intro }}<br><br>
                         {{ disease.background }}<br><br>
@@ -93,7 +93,7 @@
 			
                         <p> {{ disease.choice }}</p>
                         <p><strong>Estimated cost:</strong> {{ disease.cost }}</p>
-                        <p><strong>Doctor visits:</strong> {{ disease.docVisits }}</p>
+                        <p><strong>Doctor visits:</strong> {{ disease.doctorVisits }}</p>
                   </div>
                   <img class="challengeModal-line-vertical" class="hide-for-small" src="img/charcoal-line-vertical.png"/>
                   <div id="challengeModal-results-lifespan">

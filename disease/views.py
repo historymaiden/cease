@@ -33,9 +33,10 @@ def disease(request, pk):
         'scenario': scenario,
         'treatment': treatment,
         'lifeExtension': lifeExtension,
+        'lifeExpectancy': lifeExpectancy,
         'choice': choice,
         'cost': cost,
-        'docVisits': doctorVisits,
+        'doctorVisits': doctorVisits,
     }
     return render(request, "disease/challenge2.html", context)
 

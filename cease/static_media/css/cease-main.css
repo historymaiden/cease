@@ -4,9 +4,12 @@
 body {
 	background-color: #2d2d2d;
 }
-h2 {
+#mainHeader{
 	color:#f1f1f1;
 	font-family: 'Alike', serif;
+	position: relative;
+	left: 2em;
+	font-size: 3em;
 }
 p {
 	font-size:12px;
@@ -15,6 +18,10 @@ p {
 .topArea{
 	margin-top: 2%;
 	margin-bottom:2%;
+}
+.topArea img {
+	position: relative;
+	top: -80px;
 }
 #challengeQuestion{
 	background-color: #fff;
@@ -33,6 +40,19 @@ p {
 #challengeButton{
 	float:right;
 	margin-bottom: 3%;
+	position: relative;
+	top: -35px;
+}
+#challengeButton img {
+	
+}
+#challengeButton p {
+	position:relative;
+	color:#f1f1f1;
+	text-decoration: none;
+	text-align: center;
+	top: -45px;
+	font-weight: 800;
 }
 #mainContent{
 	width: 80%;

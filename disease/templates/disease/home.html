@@ -5,9 +5,11 @@
 {% block content %}
 <body>
 <!--"header" below-->
+
 <div class="row">
     <div class="large-12 columns topArea">
-        <img src="{{ STATIC_URL }}img/heartbeat-border-white.png" alt="heartbeat logo" />
+	<h2 id="mainHeader">cease.</h2>
+        <img src="{{ STATIC_URL }}img/heartbeart-border-white.png" alt="heartbeat logo" />
     </div>
 </div>
 <div class="row">
@@ -20,13 +22,15 @@
 			reaching the end stages of care and decide what matters most to you. Would you seek
 			further treatment or try to maintain a higher quality of life?</p>
 			<div id="challengeButton">
-			<a href="#" data-reveal-id="challengeModal">
+				<a href="#" data-reveal-id="challengeModal">
 <!--Text needs to be styled on top of the button -->
-				<img src="{{ STATIC_URL }}img/button-small-blue-dark.png">Take the challenge >></a>
+				<img src="{{ STATIC_URL }}img/button-small-blue-dark.png">
+					<p>Take the challenge</p>
+				</a>
 			</div>
 	
-      </div> 
-    <!--close challenge question div-->	
+		</div> 
+	      <!--close challenge question div-->	
     </div>
 </div>
 <!--close row-->
